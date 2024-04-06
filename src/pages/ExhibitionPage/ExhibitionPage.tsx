@@ -1,7 +1,12 @@
 import styles from './ExhibitionPage.module.scss';
+import {useLocation} from "react-router-dom";
 
 const ExhibitionPage = () => {
-    return <div className={styles.container}></div>
+    const { pathname } = useLocation();
+
+    return <div className={styles.container}>
+        <h1>{pathname}</h1>
+    </div>
 };
 
 export default ExhibitionPage;

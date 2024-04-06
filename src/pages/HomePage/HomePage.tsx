@@ -2,7 +2,7 @@ import styles from './HomePage.module.scss';
 
 const HomePage = () => {
     return <div className={styles.container}>
-        <h1>Домашнка</h1>
+        <h1>Домашка</h1>
     </div>
 }
 

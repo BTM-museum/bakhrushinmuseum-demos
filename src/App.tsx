@@ -24,7 +24,7 @@ function AnimationRouter() {
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Layout/>}>
                 <Route index element={<HomePage/>}/>
-                <Route path="/event/:id" element={<EventPage />} />
+                <Route path={'/event/:id'} element={<EventPage />} />
                 <Route path={'/excursion/:id'} element={<ExcursionPage/>}/>
                 <Route path={'/exhibition/:id'} element={<ExhibitionPage/>}/>
                 <Route path={'/exposition/:id'} element={<ExpositionPage/>}/>

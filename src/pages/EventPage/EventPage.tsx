@@ -1,8 +1,11 @@
 import styles from './EventPage.module.scss';
+import {useLocation} from "react-router-dom";
 
 const EventPage = () => {
-    return <div className={styles.container}>
+    const { pathname } = useLocation();
 
+    return <div className={styles.container}>
+        <h1>{pathname}</h1>
     </div>
 };
 
