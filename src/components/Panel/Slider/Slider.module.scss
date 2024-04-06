@@ -1,5 +1,9 @@
-.wrapper {
+@import '../../../styles/variables';
 
+.wrapper {
+  background-color: var(--primary-color);
+  height: 70px;
+  width: 100%;
 }
 
 .container {

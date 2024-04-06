@@ -1,7 +1,9 @@
 import styles from "../Panel/Slider/Slider.module.scss";
 
 const Header = () => {
-    return <div className={styles.wrapper}></div>
+    return <header className={styles.wrapper}>
+        <h1>Здесь сука хедер</h1>
+    </header>
 };
 
 export default Header;
