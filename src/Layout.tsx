@@ -3,11 +3,12 @@ import Header from "./components/Header/Header";
 import Slider from "./components/Panel/Slider/Slider";
 import Footer from "./components/Footer/Footer";
 import styles from './styles/Layout.module.scss';
+import Panel from "./components/Panel/Panel";
 
 const Layout = () => (
     <div className={styles.root}>
         <Header/>
-        <Slider/>
+        <Panel/>
         <main className={styles.main}>
             <Outlet />
         </main>
