@@ -8,12 +8,12 @@ import {excursions} from "../../store/excursions/excursions";
 const ExcursionPage = () => {
     const { pathname } = useLocation();
     const excursion = useRecoilValue(excursions);
+    console.log('pathname.split([2]');
+    console.log(pathname.split('/')[2]);
 
-    const header = transliterate(pathname.split('/')[2], true);
-    const content = excursion.find((item) => item.title === header);
+    const content = excursion.find((item) => item.link === pathname.split('/')[2]);
     return <div className={styles.container}>
         <h1>
-            {`ExcursionPage number: ${pathname}`}
             {
                 content ? content.page : 'Not Found'
             }

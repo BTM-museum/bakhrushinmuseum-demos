@@ -25,9 +25,13 @@ function AnimationRouter() {
             <Route path="/" element={<Layout/>}>
                 <Route index element={<HomePage/>}/>
                 <Route path={'/event/:id'} element={<EventPage />} />
+                <Route path={'/events'} element={<EventPage />} />
                 <Route path={'/excursion/:id'} element={<ExcursionPage/>}/>
+                <Route path={'/excursions'} element={<ExcursionPage/>}/>
                 <Route path={'/exhibition/:id'} element={<ExhibitionPage/>}/>
+                <Route path={'/exhibitions'} element={<ExhibitionPage/>}/>
                 <Route path={'/exposition/:id'} element={<ExpositionPage/>}/>
+                <Route path={'/expositions'} element={<ExpositionPage/>}/>
                 <Route path={'/news/:id'} element={<NewPage/>}/>
                 <Route path={'/store/:id'} element={<StorePage/>}/>
                 <Route path="*" element={<NotFoundPage/>}/>

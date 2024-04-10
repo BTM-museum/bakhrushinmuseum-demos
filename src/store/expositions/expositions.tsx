@@ -17,7 +17,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>«Семья Бахрушиных и залог счастливой жизни». 12+</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 1,
@@ -26,7 +27,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Бахрушинский поддержит создание Театрального музея в Саратове</h1>,
             image: image134,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1' ,
+            link: ''
         },
         {
             id: 2,
@@ -35,7 +37,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Музыкально-поэтический перфоман «В ожидании тепла». 12+</h1>,
             image: image145,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 3,
@@ -43,7 +46,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Музыкально-поэтический перфоман «В ожидании тепла». 12+</h1>,
             image: image663,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 4,
@@ -51,7 +55,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 4</h1>,
             image: image145,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 5,
@@ -59,7 +64,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 5</h1>,
             image: image145,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 6,
@@ -67,7 +73,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 6</h1>,
             image: image145,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 7,
@@ -75,7 +82,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 7</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 8,
@@ -83,7 +91,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 8</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 9,
@@ -91,7 +100,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 9</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 10,
@@ -99,7 +109,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 10</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
         {
             id: 11,
@@ -107,7 +118,8 @@ export const expositions = atom<IEvent[]>({
             page: <h1>Экспозиция 11</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1'
+            position: 'Москва, улица Бахрушина, 31/12с1',
+            link: ''
         },
     ]
 });

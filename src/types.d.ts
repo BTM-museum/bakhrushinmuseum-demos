@@ -34,6 +34,7 @@ interface IBuilding {
 interface IEvent {
     id: number;
     title: string;
+    link: string;
     page: React.ReactElement;
     date: {from: Dayjs, to: Dayjs};
     image: string;
