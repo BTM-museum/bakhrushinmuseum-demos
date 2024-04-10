@@ -9,13 +9,65 @@ import vk from "./static/vk.svg";
 import tg from "./static/tg.svg";
 import {Link} from "react-router-dom";
 import {useRecoilValue} from "recoil";
-import {visitors} from "../../store/visitors/visitors";
+
 import {about} from "../../store/about/about";
 import {exibitionsAndEvents} from "../../store/exibitionsAndEvents/exibitionsAndEvents";
 import {additional} from "../../store/additional/additional";
+import {IArticle} from "../../types";
+
+
 
 const Footer = () => {
-    const visitorsData = useRecoilValue(visitors);
+    const visitorsData: IArticle = {
+        id: 0,
+        title: "Посетителям",
+        images: [''],
+        page: <></>,
+        link: 'visitors/',
+        description: "",
+        menu: [
+            {
+                id: 0,
+                title: "Здания и часы работы",
+                images: [''],
+                page: <></>,
+                link: 'mission',
+                description: "buildings",
+            },
+            {
+                id: 1,
+                title: "Купить билет",
+                images: [''],
+                page: <></>,
+                link: 'management',
+                description: "",
+            },
+            {
+                id: 2,
+                title: "Билеты и льготы",
+                images: [''],
+                page: <></>,
+                link: 'tickets',
+                description: "",
+            },
+            {
+                id: 3,
+                title: "Правила и условия посещения",
+                images: [''],
+                page: <></>,
+                link: 'press',
+                description: "",
+            },
+            {
+                id: 4,
+                title: "Кафе и рестораны",
+                images: [''],
+                page: <></>,
+                link: 'cafe',
+                description: "",
+            },
+        ]
+    }
     const aboutData = useRecoilValue(about);
     const exibitionsAndEventsData = useRecoilValue(exibitionsAndEvents);
     const additionalData = useRecoilValue(additional);
@@ -26,15 +78,15 @@ const Footer = () => {
                 <Link to={visitorsData.link}>{visitorsData.title}</Link>
                 {
                     visitorsData && visitorsData.menu && visitorsData.menu.map((item, i) => <Link key={i}
-                                                                                                  to={item.link}>{item.title}</Link>)
+                                                                                                  to={`visitors/${item.link}`}>{item.title}</Link>)
                 }
             </div>
 
             <div className={styles.block}>
-                <Link to={aboutData.link}>{aboutData.title}</Link>
+                <Link to={`/about/${aboutData.link}`}>{aboutData.title}</Link>
                 {
                     aboutData && aboutData.menu && aboutData.menu.map((item, i) => <Link key={i}
-                                                                                         to={item.link}>{item.title}</Link>)
+                                                                                         to={`/about${item.link}`}>{item.title}</Link>)
                 }
             </div>
 

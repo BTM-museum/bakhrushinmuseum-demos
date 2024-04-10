@@ -1,5 +1,5 @@
 import {atom} from 'recoil';
-import {IArticle, INew} from "../../types";
+import {IArticle} from "../../types";
 
 
 export const visitors = atom<IArticle>({
