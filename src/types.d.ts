@@ -51,3 +51,13 @@ interface IStore {
     image: string;
     page: React.ReactElement;
 }
+
+interface IArticle {
+    id: number;
+    title: string;
+    images: string[];
+    page: React.ReactElement;
+    link: string;
+    description: string;
+    menu?: IArticle[]
+}

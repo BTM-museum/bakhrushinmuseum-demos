@@ -7,77 +7,54 @@ import yt from "./static/yt.svg";
 import rt from "./static/rt.svg";
 import vk from "./static/vk.svg";
 import tg from "./static/tg.svg";
-
-const data = [
-    {
-        title: "Посетителям",
-        reference: ministerstvo,
-        elements: [
-            { text: "Здание и час работы", link: "/" },
-            { text: "Купить билет", link: "/" },
-            { text: "Билеты и льготы", link: "/" },
-            { text: "Правила и условия посещения", link: "/" },
-            { text: "Кафе и рестораны", link: "/" },
-        ]
-    },
-    {
-        title: "О музее",
-        reference: gosuslugi,
-        elements: [
-            { text: "Миссия и история", link: "/" },
-            { text: "Руководство", link: "/" },
-            { text: "Наука", link: "/" },
-            { text: "Пресс-центр", link: "/" },
-            { text: "Правовая информация", link: "/" },
-            { text: "Контакты", link: "/" },
-            { text: "Часто заваемые вопросы", link: "/" },
-            { text: "Отзывы", link: "/" },
-        ]
-    },
-    {
-        title: "Выставки и события",
-        reference: cultura,
-        elements: [
-            { text: "Выставки", link: "/" },
-            { text: "Постоянные экспозиции", link: "/" },
-            { text: "События", link: "/" },
-            { text: "Экскурсии", link: "/" },
-        ]
-    },
-    {
-        title: "",
-        reference: [yt, rt, vk, tg], // Массив ссылок
-        elements: [
-            { text: "Сообщить об ошибке", link: "/" },
-            { text: "Использование материалов сайта", link: "/" },
-            { text: "Купить изображения", link: "/" },
-            { text: "Политика конфиденциальности", link: "/" },
-            { text: "Пользовательское соглашение", link: "/" },
-            { text: "Противодействие коррупции", link: "/" },
-            { text: "Карта сайта", link: "/" },
-            { text: "Оценка качества услуг", link: "/" },
-        ]
-    },
-]
+import {Link} from "react-router-dom";
+import {useRecoilValue} from "recoil";
+import {visitors} from "../../store/visitors/visitors";
+import {about} from "../../store/about/about";
+import {exibitionsAndEvents} from "../../store/exibitionsAndEvents/exibitionsAndEvents";
+import {additional} from "../../store/additional/additional";
 
 const Footer = () => {
-    const textJSX = data.map((item, index) => <div key={index} className={styles.block}>
-        <div className={styles.text}>
-            <h1>{item.title}</h1>
-            {
-                item.elements.map((element, index) => <a key={index} href={element.link}>{element.text}</a>)
-            }
-        </div>
-        <div className={styles.references}>
-            {
-                Array.isArray(item.reference) ? item.reference.map((ref, index) => <img key={index} src={ref} alt={item.title} />) : <img src={item.reference} alt={item.title}/>
-            }
-        </div>
-    </div>)
+    const visitorsData = useRecoilValue(visitors);
+    const aboutData = useRecoilValue(about);
+    const exibitionsAndEventsData = useRecoilValue(exibitionsAndEvents);
+    const additionalData = useRecoilValue(additional);
 
     return <div className={styles.wrapper}>
         <div className={styles.content}>
-            {textJSX}
+            <div className={styles.block}>
+                <Link to={visitorsData.link}>{visitorsData.title}</Link>
+                {
+                    visitorsData && visitorsData.menu && visitorsData.menu.map((item, i) => <Link key={i}
+                                                                                                  to={item.link}>{item.title}</Link>)
+                }
+            </div>
+
+            <div className={styles.block}>
+                <Link to={aboutData.link}>{aboutData.title}</Link>
+                {
+                    aboutData && aboutData.menu && aboutData.menu.map((item, i) => <Link key={i}
+                                                                                         to={item.link}>{item.title}</Link>)
+                }
+            </div>
+
+            <div className={styles.block}>
+                <Link to={exibitionsAndEventsData.link}>{exibitionsAndEventsData.title}</Link>
+                {
+                    exibitionsAndEventsData && exibitionsAndEventsData.menu && exibitionsAndEventsData.menu.map((item, i) =>
+                        <Link key={i}
+                              to={item.link}>{item.title}</Link>)
+                }
+            </div>
+
+            <div className={styles.block}>
+                <Link to={additionalData.link}>{additionalData.title}</Link>
+                {
+                    additionalData && additionalData.menu && additionalData.menu.map((item, i) =>
+                        <Link key={i}
+                              to={item.link}>{item.title}</Link>)
+                }
+            </div>
         </div>
     </div>
 }

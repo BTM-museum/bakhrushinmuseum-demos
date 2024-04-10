@@ -13,7 +13,7 @@ const BuildingsWidget = () => {
         <div className={styles.header}></div>
         <div className={styles.body}>
             {
-                newsData.map((item, i) => <BuildingsCard id={item.id} title={item.title} page={item.page} image={item.image} addImage={item.addImage} color={item.color} backgroundColor={item.backgroundColor} type={item.type} link={`/building/${item.link}`} />)
+                newsData.map((item, i) => <BuildingsCard key={i} id={item.id} title={item.title} page={item.page} image={item.image} addImage={item.addImage} color={item.color} backgroundColor={item.backgroundColor} type={item.type} link={`/building/${item.link}`} />)
             }
         </div>
     </div>
