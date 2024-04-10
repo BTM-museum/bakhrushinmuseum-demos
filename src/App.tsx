@@ -12,6 +12,8 @@ import NewPage from "./pages/NewPage/NewPage";
 import StorePage from "./pages/StorePage/StorePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import BuildingPage from "./pages/BuildingPage/BuildingPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import VisitorsPage from "./pages/VisitorsPage/VisitorsPage";
 
 function AnimationRouter() {
     const {pathname} = useLocation();
@@ -37,6 +39,11 @@ function AnimationRouter() {
                 <Route path={'/news'} element={<NewPage/>}/>
                 <Route path={'/store/:id'} element={<StorePage/>}/>
                 <Route path={'/building/:id'} element={<BuildingPage/>}/>
+                <Route path={'/about/:id'} element={<AboutPage/>}/>
+                <Route path={'/about/'} element={<AboutPage/>}/>
+                <Route path={'/visitors/:id'} element={<VisitorsPage/>}/>
+                <Route path={'/visitors/'} element={<VisitorsPage/>}/>
+
                 <Route path="*" element={<NotFoundPage/>}/>
             </Route>
         </Routes>
