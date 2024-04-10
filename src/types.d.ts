@@ -18,6 +18,7 @@ interface INew {
     page: React.ReactElement;
     date: Dayjs;
     image: string;
+    link: string;
 };
 
 interface IBuilding {
@@ -29,6 +30,7 @@ interface IBuilding {
     color: string;
     backgroundColor: string;
     type: 'quarter' | 'filial',
+    link: string;
 };
 
 interface IEvent {

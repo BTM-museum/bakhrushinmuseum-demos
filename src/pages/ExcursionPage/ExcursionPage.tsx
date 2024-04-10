@@ -8,8 +8,6 @@ import {excursions} from "../../store/excursions/excursions";
 const ExcursionPage = () => {
     const { pathname } = useLocation();
     const excursion = useRecoilValue(excursions);
-    console.log('pathname.split([2]');
-    console.log(pathname.split('/')[2]);
 
     const content = excursion.find((item) => item.link === pathname.split('/')[2]);
     return <div className={styles.container}>

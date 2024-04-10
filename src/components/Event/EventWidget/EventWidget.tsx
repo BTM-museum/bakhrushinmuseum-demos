@@ -14,7 +14,7 @@ const EventWidget = () => {
         {link: '/expositions', title: 'Выставки'},
         {link: '/excursions', title: 'Экскурсии'},
         {link: '/exhibitions', title: 'Экспозиции'},
-        {link: '/events', title: 'Все события'},
+        {link: '/events', title: 'События'},
     ];
 
     const expositionsData = useRecoilValue(expositions);
@@ -23,75 +23,19 @@ const EventWidget = () => {
     const exhibitionsData = useRecoilValue(exhibitions);
 
 
-    let jsx = expositionsData.map((item, i) => <EventCard id={item.id}
-                                                       link={`/exposition/${item.link}`}
-                                                       date={item.date}
-                                                       title={item.title}
-                                                       image={item.image}
-                                                       page={item.page}
-                                                       position={item.position}
-                                                       type={item.type}
-                                                       key={i}/>)
+    let jsx = expositionsData.map((item, i) => {
 
-    React.useEffect(() => {
-        switch (sectionActive) {
-            case 0:
-                jsx = expositionsData.map((item, i) => <EventCard id={item.id}
-                                                             link={`/exposition/${item.link}`}
-                                                             date={item.date}
-                                                             title={item.title}
-                                                             image={item.image}
-                                                             page={item.page}
-                                                             position={item.position}
-                                                             type={item.type}
-                                                             key={i}/>)
-                break;
-            case 1:
-                jsx = excursionsData.map((item, i) => <EventCard id={item.id}
-                                                             link={`/exposition/${item.link}`}
-                                                             date={item.date}
-                                                             title={item.title}
-                                                             image={item.image}
-                                                             page={item.page}
-                                                             position={item.position}
-                                                             type={item.type}
-                                                             key={i}/>)
-                break;
-            case 2:
-                jsx = eventsData.map((item, i) => <EventCard id={item.id}
-                                                             link={`/exposition/${item.link}`}
-                                                             date={item.date}
-                                                             title={item.title}
-                                                             image={item.image}
-                                                             page={item.page}
-                                                             position={item.position}
-                                                             type={item.type}
-                                                             key={i}/>)
-                break;
-            case 3:
-                jsx = eventsData.map((item, i) => <EventCard id={item.id}
-                                                             link={`/exposition/${item.link}`}
-                                                             date={item.date}
-                                                             title={item.title}
-                                                             image={item.image}
-                                                             page={item.page}
-                                                             position={item.position}
-                                                             type={item.type}
-                                                             key={i}/>)
-                break;
-            default:
-                jsx = eventsData.map((item, i) => <EventCard id={item.id}
-                                                             link={`/event/${item.link}`}
-                                                             date={item.date}
-                                                             title={item.title}
-                                                             image={item.image}
-                                                             page={item.page}
-                                                             position={item.position}
-                                                             type={item.type}
-                                                             key={i}/>)
-                break;
+        return <EventCard id={item.id}
+                   link={`/exposition/${item.link}`}
+                   date={item.date}
+                   title={item.title}
+                   image={item.image}
+                   page={item.page}
+                   position={item.position}
+                   type={item.type}
+                   key={i}/>
         }
-    }, [sectionActive]);
+    )
 
     return <div className={styles.wrapper}>
         <div className={styles.header}>
@@ -103,8 +47,45 @@ const EventWidget = () => {
             <Link to={sections[sectionActive].link}>{`Все ${sections[sectionActive].title}`}</Link>
         </div>
         <div className={styles.body}>
+            {   sectionActive === 0 && expositionsData.map((item, i) => <EventCard id={item.id}
+                                                                                   link={`/exposition/${item.link}`}
+                                                                                   date={item.date}
+                                                                                   title={item.title}
+                                                                                   image={item.image}
+                                                                                   page={item.page}
+                                                                                   position={item.position}
+                                                                                   type={item.type}
+                                                                                   key={i}/>)}
+            {   sectionActive === 1 && excursionsData.map((item, i) => <EventCard id={item.id}
+                                                                                   link={`/excursion/${item.link}`}
+                                                                                   date={item.date}
+                                                                                   title={item.title}
+                                                                                   image={item.image}
+                                                                                   page={item.page}
+                                                                                   position={item.position}
+                                                                                   type={item.type}
+                                                                                   key={i}/>)}
             {
-
+                sectionActive === 2 && eventsData.map((item, i) => <EventCard id={item.id}
+                                                       link={`/event/${item.link}`}
+                                                       date={item.date}
+                                                       title={item.title}
+                                                       image={item.image}
+                                                       page={item.page}
+                                                       position={item.position}
+                                                       type={item.type}
+                                                       key={i}/>)
+            }
+            {
+                sectionActive === 3 && exhibitionsData.map((item, i) => <EventCard id={item.id}
+                                                            link={`/exhibition/${item.link}`}
+                                                            date={item.date}
+                                                            title={item.title}
+                                                            image={item.image}
+                                                            page={item.page}
+                                                            position={item.position}
+                                                            type={item.type}
+                                                            key={i}/>)
             }
         </div>
     </div>

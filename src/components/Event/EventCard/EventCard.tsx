@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {transliterate} from "../../../helpers/translate";
 
 const EventCard = (event: IEvent) => {
-    return <Link to={`/excursion/${event.link}`} className={styles.wrapper}>
+    return <Link to={`${event.link}`} className={styles.wrapper}>
         <div>
             <img src={event.image} alt={event.title}/>
             {event.type && <p>{event.type}</p>}

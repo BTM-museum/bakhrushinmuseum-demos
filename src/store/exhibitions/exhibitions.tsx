@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 
 
 export const exhibitions = atom<IEvent[]>({
-    key: 'events',
+    key: 'exhibitions',
     default: [
         {
             id: 0,
@@ -18,7 +18,7 @@ export const exhibitions = atom<IEvent[]>({
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Semya-Bahrushinyh-i-zalog-schastlivoj-zhizni.-12+'
         },
         {
             id: 1,
@@ -28,7 +28,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image134,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Bahrushinskij-podderzhit-sozdanie-Teatralnogo-muzeya-v-Saratove'
+
         },
         {
             id: 2,
@@ -38,7 +39,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image145,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman'
+
         },
         {
             id: 3,
@@ -47,8 +49,9 @@ export const exhibitions = atom<IEvent[]>({
             image: image663,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
-        },
+             link: 'Muzykalno-poeticheskij-perfoman1'
+
+},
         {
             id: 4,
             title: 'Выставка 4',
@@ -56,7 +59,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image145,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman2'
+
         },
         {
             id: 5,
@@ -65,7 +69,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image145,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman3'
+
         },
         {
             id: 6,
@@ -74,7 +79,9 @@ export const exhibitions = atom<IEvent[]>({
             image: image145,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman4'
+
+
         },
         {
             id: 7,
@@ -83,7 +90,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman5'
+
         },
         {
             id: 8,
@@ -92,7 +100,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman6'
+
         },
         {
             id: 9,
@@ -101,7 +110,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman7'
+
         },
         {
             id: 10,
@@ -110,7 +120,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman8'
+
         },
         {
             id: 11,
@@ -119,7 +130,8 @@ export const exhibitions = atom<IEvent[]>({
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: ''
+            link: 'Muzykalno-poeticheskij-perfoman9'
+
         },
     ]
 });

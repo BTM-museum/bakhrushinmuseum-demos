@@ -6,9 +6,7 @@ import {CSSProperties, useEffect} from "react";
 const Panel = () => {
     const { pathname } = useLocation();
     const jsx = <h1>{'Это панель с путем'}</h1>;
-    useEffect(() => {
-        console.log(pathname)
-    }, [pathname]);
+
 
 
     const rootStyles: {[key: string ]: CSSProperties}  = {
