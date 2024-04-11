@@ -9,7 +9,7 @@ export const children = atom<IArticle>({
         title: "Бахрушинский детям",
         images: [''],
         page: <h1>{'Страница | Разводная страница с разделами'}</h1>,
-        link: '',
+        link: 'children',
         description: 'Разводная страница с разделами',
         menu: [
             {

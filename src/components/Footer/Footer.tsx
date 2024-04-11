@@ -23,7 +23,7 @@ const Footer = () => {
         title: "Посетителям",
         images: [''],
         page: <></>,
-        link: 'visitors/',
+        link: 'visitors',
         description: "",
         menu: [
             {

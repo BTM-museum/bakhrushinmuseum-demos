@@ -9,7 +9,7 @@ export const support = atom<IArticle>({
         title: "Поддержать музей",
         images: [''],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
-        link: '',
+        link: 'support',
         description: 'Разводная страница с разделами.',
         menu: [
             {

@@ -40,10 +40,9 @@ function AnimationRouter() {
                 <Route path={'/store/:id'} element={<StorePage/>}/>
                 <Route path={'/building/:id'} element={<BuildingPage/>}/>
                 <Route path={'/about/:id'} element={<AboutPage/>}/>
-                <Route path={'/about/'} element={<AboutPage/>}/>
+                <Route path={'/about'} element={<AboutPage/>}/>
                 <Route path={'/visitors/:id'} element={<VisitorsPage/>}/>
-                <Route path={'/visitors/'} element={<VisitorsPage/>}/>
-
+                <Route path={'/visitors'} element={<VisitorsPage/>}/>
                 <Route path="*" element={<NotFoundPage/>}/>
             </Route>
         </Routes>

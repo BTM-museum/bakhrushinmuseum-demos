@@ -9,7 +9,7 @@ export const exibitionsAndEvents = atom<IArticle>({
         title: "Выставки и события",
         images: [''],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
-        link: '',
+        link: 'exibitionsAndEvents',
         description: 'Разводная страница с разделами.',
         menu: [
             {

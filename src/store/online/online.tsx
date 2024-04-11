@@ -9,7 +9,7 @@ export const online = atom<IArticle>({
         title: "Бахрушинский онлайн",
         images: [''],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
-        link: '',
+        link: 'online',
         description: 'Разводная страница с разделами.',
         menu: [
             {

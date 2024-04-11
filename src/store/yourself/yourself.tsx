@@ -9,7 +9,7 @@ export const yourself = atom<IArticle>({
         title: "Узнавайте сами",
         images: [''],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
-        link: '',
+        link: 'yourself',
         description: 'Разводная страница с разделами.',
         menu: [
             {

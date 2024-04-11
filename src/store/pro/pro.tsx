@@ -9,7 +9,7 @@ export const pro = atom<IArticle>({
         title: "Про театр",
         images: [''],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
-        link: '',
+        link: 'pro',
         description: 'Разводная страница с разделами.',
         menu: [
             {
