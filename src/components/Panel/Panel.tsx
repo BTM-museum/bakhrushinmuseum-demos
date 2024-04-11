@@ -3,6 +3,8 @@ import {useLocation} from "react-router-dom";
 import image from './static/filials.png';
 import {CSSProperties, useEffect} from "react";
 
+
+
 const Panel = () => {
     const { pathname } = useLocation();
     const jsx = <h1>{'Это панель с путем'}</h1>;

@@ -5,6 +5,7 @@ const Afisha = () => {
     const location = useLocation();
     return <div className={styles.container}>
         <h1>{location.pathname}</h1>
+        expositions
     </div>
 };
 
