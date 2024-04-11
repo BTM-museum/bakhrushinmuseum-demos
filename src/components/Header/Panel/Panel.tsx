@@ -8,25 +8,55 @@ interface Props {
     setElement: Dispatch<SetStateAction<IArticle | undefined>>;
 }
 
+function hasNestedMenu(article: IArticle): boolean {
+    if (article.menu) {
+        for (const subArticle of article.menu) {
+            if (subArticle.menu) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 const Panel = ({ element, setElement }: Props) => {
     const [ activeMenu, setActiveMenu ] = useState<IArticle>(element);
-    return <div className={styles.wrapper} onMouseLeave={() => {setElement(undefined)}}>
-        <div className={styles.contentBlock}>
-            {
-                element && element.menu && element.menu.map((item, i) => <Link onMouseEnter={() => { setActiveMenu(item) }} to={item.link}>{item.title}</Link>)
-            }
+    if (hasNestedMenu(element)) {
+        return <div className={styles.wrapper} onMouseLeave={() => {setElement(undefined)}}>
+            <div className={styles.contentBlock}>
+                {
+                    element && element.menu && element.menu.map((item, i) => <Link onMouseEnter={() => { setActiveMenu(item) }} to={item.link}>{item.title}</Link>)
+                }
+            </div>
+            <div className={styles.contentBlock}>
+                {
+                    activeMenu.images[0] !== '' && <img src={activeMenu.images[0]} alt={activeMenu.title} />
+                }
+                {
+                    activeMenu.description
+                }
+            </div>
         </div>
-        <div className={styles.contentBlock}>
-            {
-                activeMenu.images[0] !== '' && <img src={activeMenu.images[0]} alt={activeMenu.title} />
-            }
-            {
-                activeMenu.description
-            }
+    } else {
+        return <div className={styles.wrapper} onMouseLeave={() => {setElement(undefined)}}>
+            <div className={styles.contentBlock}>
+                {
+                    element && element.menu && element.menu.map((item, i) => <Link onMouseEnter={() => { setActiveMenu(item) }} to={item.link}>{item.title}</Link>)
+                }
+            </div>
+            <div className={styles.contentBlock}>
+                {
+                    activeMenu.images[0] !== '' && <img src={activeMenu.images[0]} alt={activeMenu.title} />
+                }
+                {
+                    activeMenu.description
+                }
+
+            </div>
 
         </div>
+    }
 
-    </div>
 };
 
 export default Panel;
