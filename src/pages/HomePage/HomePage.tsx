@@ -5,9 +5,10 @@ import BuildingsWidget from "../../components/Buildings/BuildingsWidget/Building
 
 const HomePage = () => {
     return <div className={styles.container}>
-        <BuildingsWidget/>
-        <NewsWidget/>
         <EventWidget/>
+
+        <NewsWidget/>
+        <BuildingsWidget/>
     </div>
 }
 

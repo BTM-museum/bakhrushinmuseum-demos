@@ -1,4 +1,4 @@
-import styles from "../Panel/Slider/Slider.module.scss";
+import styles from "./Header.module.scss";
 import {useRecoilValue} from "recoil";
 import {visitors} from "../../store/visitors/visitors";
 import {exibitionsAndEvents} from "../../store/exibitionsAndEvents/exibitionsAndEvents";
@@ -25,7 +25,7 @@ import account from './assets/account.svg';
 const Header = () => {
 
     const visitorsData = useRecoilValue(visitors);
-    const [ selectedMenu, setSelectedMenu ] = useState<IArticle | undefined>(visitorsData)
+    const [ selectedMenu, setSelectedMenu ] = useState<IArticle | undefined>(undefined)
 
     const exibitionsAndEventsData = useRecoilValue(exibitionsAndEvents);
     const yourdelfData= useRecoilValue(yourself);

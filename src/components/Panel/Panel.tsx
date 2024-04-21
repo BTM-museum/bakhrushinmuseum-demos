@@ -2,12 +2,16 @@ import styles from './Panel.module.scss';
 import {useLocation} from "react-router-dom";
 import image from './static/filials.png';
 import {CSSProperties, useEffect} from "react";
+import Slider from './Slider/Slider'
+import slide0 from './static/slide0.jpg';
+import slide1 from './static/slide1.jpg';
+import slide2 from './static/slide2.jpg';
+import slide3 from './static/slide3.jpg';
 
 
 
 const Panel = () => {
     const { pathname } = useLocation();
-    const jsx = <h1>{'Это панель с путем'}</h1>;
 
 
 
@@ -21,10 +25,7 @@ const Panel = () => {
         'store': {},
     }
     return <div className={styles.wrapper}>
-        {jsx}
-        <div style={rootStyles[pathname.split('/')[1]]} className={styles.backgroundImage}>
-            <img src={image} alt={image} className={styles.filials} />
-        </div>
+        <Slider/>
     </div>
 };
 

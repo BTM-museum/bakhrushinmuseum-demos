@@ -117,6 +117,7 @@ export const expositions = atom<IEvent[]>({
             title: 'Экспозиция 10',
             page: <h1>Экспозиция 10</h1>,
             image: image133,
+            type: 'pro',
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
             link: 'Muzykalno-poeticheskij-perfoman8'
@@ -126,6 +127,7 @@ export const expositions = atom<IEvent[]>({
             id: 11,
             title: 'Экспозиция 11',
             page: <h1>Экспозиция 11</h1>,
+            type: 'pro',
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',

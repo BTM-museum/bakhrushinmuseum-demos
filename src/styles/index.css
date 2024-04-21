@@ -71,7 +71,8 @@ h4, h5, h6, p {
     font-family: 'TT Norms', sans-serif;
     font-weight: normal;
     font-style: normal;
-    color: #54565A;
+    color: #53565A;
+    font-weight: 400;
 }
 
 a {
@@ -89,5 +90,14 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 28px;
+    font-weight: 300;
     height: 26px;
+}
+
+h4 {
+    font-size: 21px;
+}
+
+img {
+    pointer-events: none;
 }
