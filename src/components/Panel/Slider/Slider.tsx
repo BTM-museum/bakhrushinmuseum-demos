@@ -8,12 +8,21 @@ import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import AnimatedTextWord from "../../../helpers/AnimatedTextCharacter/AnimatedTextWord";
 import AnimatedTextCharacter from "../../../helpers/AnimatedTextCharacter/AnimatedTextCharacter";
+// @ts-ignore
+import vidio from '../static/promo.mp4';
 
 const imgs = [
-    slider0, slider1, slider2
+    vidio, slider0, slider1, slider2
 ];
 
 const dataSlides = [
+    {
+        title: '',
+        additional: '',
+        description: '',
+        buttonText: '',
+        link: ''
+    },
     {
         title: 'Заголовок 0',
         additional: 'Текст сверху 0',
@@ -54,7 +63,7 @@ const Slider = () => {
         },
         visible: {
             opacity: 0.5,
-            transition: { duration: 1, ease: 'easeInOut' },
+            transition: {duration: 1, ease: 'easeInOut'},
             zIndex: 0,
         },
         move: {
@@ -69,8 +78,6 @@ const Slider = () => {
             }
         }
     };
-
-
 
 
     const useNextSlide = () => {
@@ -103,41 +110,58 @@ const Slider = () => {
         <motion.div
             className={styles.container}
         >
-            <motion.div key={imgs[imgIndex]}
-                        style={{
-                            backgroundImage: `url(${imgs[imgIndex]})`,
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: '108%',
+            {
+                imgIndex === 0 ? <motion.video
+                    key="video"
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    transition={{duration: 1}}
+                    loop
+                    autoPlay
+                    muted
+                    className={styles.img}
+                >
+                    <source src={imgs[0]} type="video/mp4"/>
+                </motion.video> : <>
+                    <motion.div key={imgs[imgIndex]}
+                                style={{
+                                    backgroundImage: `url(${imgs[imgIndex]})`,
+                                    backgroundRepeat: 'no-repeat',
+                                    backgroundSize: '108%',
 
-                            backgroundPosition: 'center center',
-                            // padding: '20px',
-                        }}
-                        className={styles.img}
-                        variants={imageVariants}
-                        exit='initial'
-                        initial="initial"
-                        animate={controls}
-                        onAnimationComplete={() => {
-                            // Анимация прозрачности завершена, начинаем анимацию перемещения
-                            controls.start("move");
-                        }}
+                                    backgroundPosition: 'center center',
+                                    // padding: '20px',
+                                }}
+                                className={styles.img}
+                                variants={imageVariants}
+                                exit='initial'
+                                initial="initial"
+                                animate={controls}
+                                onAnimationComplete={() => {
+                                    // Анимация прозрачности завершена, начинаем анимацию перемещения
+                                    controls.start("move");
+                                }}
 
-            />
+                    />
 
-            <motion.div className={styles.text}
-                        key={imgIndex}
-                        initial={{       }}
-                        animate={{      }}
-                        exit={{     }}
-            >
-                {/*<motion.p>{dataSlides[imgIndex].additional}</motion.p>*/}
-                <AnimatedTextCharacter text={dataSlides[imgIndex].additional} />
-                <AnimatedTextWord text={dataSlides[imgIndex].title} />
-                <AnimatedTextWord text={dataSlides[imgIndex].link} />
-                {/*<motion.h1>{dataSlides[imgIndex].title}</motion.h1>*/}
-                {/*<motion.p>{dataSlides[imgIndex].title}</motion.p>*/}
-                <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
-            </motion.div>
+                    <motion.div className={styles.text}
+                                key={imgIndex}
+                                initial={{}}
+                                animate={{}}
+                                exit={{}}
+                    >
+                        {/*<motion.p>{dataSlides[imgIndex].additional}</motion.p>*/}
+                        <AnimatedTextCharacter text={dataSlides[imgIndex].additional}/>
+                        <AnimatedTextWord text={dataSlides[imgIndex].title}/>
+                        <AnimatedTextWord text={dataSlides[imgIndex].link}/>
+                        {/*<motion.h1>{dataSlides[imgIndex].title}</motion.h1>*/}
+                        {/*<motion.p>{dataSlides[imgIndex].title}</motion.p>*/}
+                        <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
+                    </motion.div>
+
+                </>
+            }
 
             <img onClick={usePrevSlide} src={arrow} alt="arrow" className={styles.petal}
                  style={{left: '1vw', transform: 'rotate(-180deg)'}}/>
