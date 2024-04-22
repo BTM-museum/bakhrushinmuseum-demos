@@ -6,6 +6,15 @@ import Filials from "../../components/Filials/Filials";
 import Widget from "../../components/Widget/Widget";
 import News from "../../components/News/News";
 import Shop from "../../components/Shop/Shop";
+import InfiniteScrollLinks from "../../components/Line/Line";
+
+const linksData = [
+    { title: "Google", link: "https://www.google.com" },
+    { title: "Facebook", link: "https://www.facebook.com" },
+    { title: "Twitter", link: "https://www.twitter.com" },
+    { title: "LinkedIn", link: "https://www.linkedin.com" },
+    // Добавьте столько ссылок, сколько необходимо
+];
 
 const HomePage = () => {
     return <div className={styles.container}>
@@ -13,12 +22,14 @@ const HomePage = () => {
         <Widget/>
         {/*<News/>*/}
 
-        <NewsWidget/>
+        {/*<NewsWidget/>*/}
+
+        {/*<InfiniteScrollLinks items={linksData}/>*/}
 
         <Shop/>
         <Widget/>
 
-        {/*<BuildingsWidget/>*/}
+        <BuildingsWidget/>
         {/*<Filials/>*/}
     </div>
 }

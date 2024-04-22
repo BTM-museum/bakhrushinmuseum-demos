@@ -31,7 +31,9 @@ const FilialCard = ({ filial }: FilialCardProps) => {
             initial={{opacity: 1}} // Начальное состояние анимации
             animate={{
                 opacity: isInView ? 1 : 0,
-                transform: isInView ? "none" : "translateY(-20px)"
+                transform: isInView ? "none" : "translateY(-20px)",
+
+
             }} // Конечное состояние анимации
             exit={{opacity: 0}}
             transition={{duration: 0.3}} // Продолжительность анимации
@@ -46,7 +48,7 @@ const FilialCard = ({ filial }: FilialCardProps) => {
             >
 
                 <motion.div
-                    animate={{backgroundColor: hover ? filial.backgroundColor : 'rgba(0,0,0,0)'}}
+                    animate={{backgroundColor: hover ? filial.backgroundColor : 'rgba(0,0,0,0)', scale: hover ? 1.1 : 1,}}
                     className={styles.background}
                 >
                     <motion.h1

@@ -1,10 +1,21 @@
 .wrapper {
-  min-width: 480px;
-  height: 480px;
+  min-width: 517px;
+
+  height: 517px;
   background-color: #B0B1B3;
-  margin-right: 30px;
+  //margin-right: 30px;
   cursor: pointer;
   overflow: hidden;
+}
+
+button {
+  background: none;
+  border: 1px solid #54565a;
+  border-radius: 25px;
+  color: #54565a;
+  cursor: pointer;
+  padding: 10px 30px;
+  transition: all .4s;
 }
 
 .image {
