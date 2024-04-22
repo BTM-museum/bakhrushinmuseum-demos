@@ -39,6 +39,9 @@ const EventWidget = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.3, type: 'ease' }}
+            // key={sectionActive}
             className={styles.header}>
             <div className={styles.sectionGroups}>{sections.map((section, i) => <h1
                 className={styles.sectionTitle}
@@ -47,7 +50,15 @@ const EventWidget = () => {
                 key={i}>{section.title}</h1>)}</div>
             <Link to={sections[sectionActive].link}>{`Все ${sections[sectionActive].title}`}</Link>
         </motion.div>
-        <div className={styles.body}>
+        <motion.div
+            initial={{ opacity: 0, y: 40,  }}
+            whileInView={{ opacity: 1, y: 0,  }}
+            exit={{ opacity: 0, y: 40,  }}
+            transition={{ duration: 0.3, type: 'ease' }}
+            viewport={{ once: false, amount: 0.5 }}
+            key={sections[sectionActive].title}
+            className={styles.body}
+        >
             {   sectionActive === 0 && expositionsData.slice(-3).map((item, i) => <EventCard id={item.id}
                                                                                    link={`/exposition/${item.link}`}
                                                                                    date={item.date}
@@ -88,7 +99,7 @@ const EventWidget = () => {
                                                             type={item.type}
                                                             key={i}/>)
             }
-        </div>
+        </motion.div>
     </div>
 };
 

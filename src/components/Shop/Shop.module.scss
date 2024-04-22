@@ -1,53 +1,26 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  position: relative;
-  height: 800px;
+  overflow: hidden;
+  width: 100%;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-
   h1 {
-    margin: 0;
     color: white;
-
   }
   button {
-    border: 1px solid #54565a;
-    border-radius: 25px;
-    color: #54565a;
-    cursor: pointer;
-    padding: 10px 30px;
-    transition: all .4s;
-    height: 50px;
     color: white;
-    border-color: white;
-    &:hover {
-      color: white;
-      background: #54565a;
-      background-color: white;
-    }
+    border: none;
+    background: none;
+    cursor: pointer;
   }
 }
 
 .content {
   display: flex;
-  overflow-x: scroll;
-  flex-wrap: nowrap;
-  padding-top: 40px;
-  position: absolute;
-  width: 100vw;
-  transform: rotateX(0);
-  &::-webkit-scrollbar {
-    display: none; /* для WebKit (Safari, Chrome и т.д.) */
-  }
-
-
-
-  -ms-overflow-style: none;  /* для IE и Edge */
-  scrollbar-width: none; /* для Firefox */
-  overflow-y: scroll; /* Сохраняет возможность прокрутки */
+  padding: 30px 0 15px 0;
+  justify-content: space-between;
 }

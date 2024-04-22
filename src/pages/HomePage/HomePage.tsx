@@ -11,11 +11,13 @@ const HomePage = () => {
     return <div className={styles.container}>
         <EventWidget/>
         <Widget/>
-        <News/>
+        {/*<News/>*/}
+
+        <NewsWidget/>
+
         <Shop/>
         <Widget/>
 
-        {/*<NewsWidget/>*/}
         {/*<BuildingsWidget/>*/}
         {/*<Filials/>*/}
     </div>

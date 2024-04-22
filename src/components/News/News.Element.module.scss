@@ -26,12 +26,13 @@
   align-items: center; /* Центрирование содержимого по вертикали */
 
   img {
-    width: 390px;
+    width: 100%;
     height: auto;
   }
 }
 
 .text {
+  width: fit-content;
   h1 {
     height: fit-content;
     margin-bottom: 1px;

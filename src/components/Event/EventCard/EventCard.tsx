@@ -28,6 +28,7 @@ const EventCard = (event: IEvent) => {
     return <Link to={`${event.link}`} className={styles.wrapper} onMouseEnter={() => setSelectedEvent(true)}
                  onMouseLeave={() => setSelectedEvent(false)}>
         <motion.div
+
             className={styles.imageContainer}
             style={{transform: selectedEvent ? 'scale(1.03)' : 'scale(1)'}}
         >
@@ -35,17 +36,17 @@ const EventCard = (event: IEvent) => {
                 src={event.image}
                 style={{transform: selectedEvent ? 'scale(1.05)' : 'scale(1)'}}
                 alt={event.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
 
-                transition={{ duration: 0.3, type: 'ease' }}
                 viewport={{ once: false, amount: 0.5 }}
             />
             {event.type === 'pro' && <p className={styles.type}><div/>{'ПРО'}</p>}
 
         </motion.div>
-        <div className={styles.contentBlock}>
+        <motion.div
+
+
+
+            className={styles.contentBlock}>
             <div className={styles.timeGroup}>
                 <p>{`${formattedFromDate}   `}</p>
                 <p>-{formattedToDate}</p>
@@ -57,7 +58,7 @@ const EventCard = (event: IEvent) => {
                 <p>{event.position}</p>
             </div>
             <img src={arrow} alt={arrow} className={styles.arrow} style={{transform: selectedEvent ? 'translateX(0)' : 'translateX(-8px)'}}/>
-        </div>
+        </motion.div>
     </Link>
 };
 

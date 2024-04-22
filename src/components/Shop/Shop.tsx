@@ -27,34 +27,61 @@ interface IShop extends IEntity {
     price: number;
 }
 
+const items: IShop[] = [
+    { id: 0, title: "Товар 1", imageUrl: image1, link: "/", price: 100},
+    { id: 1, title: "Товар 2", imageUrl: image2, link: "/", price: 100},
+    { id: 2, title: "Товар 3", imageUrl: image3, link: "/", price: 100},
+    { id: 3, title: "Товар 4", imageUrl: image4, link: "/", price: 100},
+    { id: 4, title: "Товар 5", imageUrl: image5, link: "/", price: 100},
+    { id: 5, title: "Товар 6", imageUrl: image6, link: "/", price: 100},
+    { id: 6, title: "Товар 7", imageUrl: image7, link: "/", price: 100},
+    { id: 7, title: "Товар 7", imageUrl: image8, link: "/", price: 100},
+    { id: 8, title: "Товар 8", imageUrl: image9, link: "/", price: 100},
+    { id: 9, title: "Товар 9", imageUrl: image10, link: "/", price: 100},
+    { id: 10, title: "Товар 10", imageUrl: image11, link: "/", price: 100},
+    { id: 11, title: "Товар 11", imageUrl: image12, link: "/", price: 100},
+    { id: 12, title: "Товар 12", imageUrl: image13, link: "/", price: 100},
+    { id: 3, title: "Товар 4", imageUrl: image4, link: "/", price: 100},
+
+];
+
 const Shop = () => {
-    const items: IShop[] = [
-        { id: 0, title: "Товар 1", imageUrl: image1, link: "/", price: 100},
-        { id: 1, title: "Товар 2", imageUrl: image2, link: "/", price: 100},
-        { id: 2, title: "Товар 3", imageUrl: image3, link: "/", price: 100},
-        { id: 3, title: "Товар 4", imageUrl: image4, link: "/", price: 100},
-        { id: 4, title: "Товар 5", imageUrl: image5, link: "/", price: 100},
-        { id: 5, title: "Товар 6", imageUrl: image6, link: "/", price: 100},
-        { id: 6, title: "Товар 7", imageUrl: image7, link: "/", price: 100},
-        { id: 7, title: "Товар 7", imageUrl: image8, link: "/", price: 100},
-        { id: 8, title: "Товар 8", imageUrl: image9, link: "/", price: 100},
-        { id: 9, title: "Товар 9", imageUrl: image10, link: "/", price: 100},
-        { id: 10, title: "Товар 10", imageUrl: image11, link: "/", price: 100},
-        { id: 11, title: "Товар 11", imageUrl: image12, link: "/", price: 100},
-        { id: 12, title: "Товар 12", imageUrl: image13, link: "/", price: 100},
-    ];
-    const itemsJSX = items.map(item => <ShopElement item={item}/>)
+
     return <div className={styles.wrapper}>
-        <div className={styles.header}>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.3, type: 'ease' }}
+
+            className={styles.header}>
             <h1>{"Магазин"}</h1>
             <button>{"Перейти в магазин"}</button>
-        </div>
-        <motion.div className={styles.content} style={{ y: 50, x: '-10%' }}>
-            {itemsJSX}
+        </motion.div>
+        <motion.div
+            className={styles.content}
+            initial={{ opacity: 0, y: 40,  }}
+            whileInView={{ opacity: 1, y: 0,  }}
+            exit={{ opacity: 0, y: 40,  }}
+            transition={{ duration: 0.3, type: 'ease' }}
+            viewport={{ once: false, amount: 0.1 }}
+        >
+            {
+                items.slice(0, Math.ceil(items.length / 2)).map((item, index) => <ShopElement key={index} item={item}/>)
+            }
         </motion.div>
 
-        <motion.div className={styles.content} style={{ y: 400,x: '-10%' }}>
-            {itemsJSX}
+        <motion.div
+            initial={{ opacity: 0, y: 40,  }}
+            whileInView={{ opacity: 1, y: 0,  }}
+            exit={{ opacity: 0, y: 40,  }}
+            transition={{ duration: 0.3, type: 'ease' }}
+            viewport={{ once: false, amount: 0.1 }}
+            className={styles.content}>
+            {
+                items.slice(Math.ceil(items.length / 2)).map((item, index) => <ShopElement key={index} item={item}/>)
+            }
         </motion.div>
     </div>
 };

@@ -33,7 +33,13 @@ const Widget = () => {
     const [ button2, setButton2 ] = useState(false);
 
     const sliderJSX = slides.map((slide) => (
-        <div
+        <motion.div
+            initial={{ opacity: .6, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: .6, y: -30 }}
+            viewport={{ once: false, amount: 0.5 }}
+            transition={{ duration: 0.3, type: 'ease' }}
+
             className={styles.slide}
             style={{backgroundColor: slide.backgroundColor}}
             key={slide.id}
@@ -73,7 +79,7 @@ const Widget = () => {
                 style={{backgroundImage: `url(${slide.imageUrl})`}}
                 className={styles.image}
             />
-        </div>
+        </motion.div>
     ));
 
     // Использование currentIndex для выбора текущего слайда

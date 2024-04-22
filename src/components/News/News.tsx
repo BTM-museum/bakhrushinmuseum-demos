@@ -31,8 +31,6 @@ const news: INews[] = [
 
 const News = () => {
 
-
-
     const newsJSX = news.map(newsItem => newsItem.id < 3 && (newsItem.type === 'compact' ? <NewsElementCompact
             key={newsItem.id}
             title={newsItem.title}

@@ -33,7 +33,7 @@ const NewsElement = ({ date, title, image}: NewsElementProps) => {
         >
             <motion.div
                 className={styles.imageWrapper}
-                animate={{ width: hover ? 'fit-content' : '300px', height: hover ? 'fit-content' : 'fit-content', paddingTop: hover ? '25px' : '0' }}
+                animate={{ width: hover ? '90%' : '70%', height: hover ? 'fit-content' : 'fit-content', paddingTop: hover ? '25px' : '0' }}
             >
                 <img src={image} alt={title}/>
             </motion.div>
@@ -44,6 +44,7 @@ const NewsElement = ({ date, title, image}: NewsElementProps) => {
 
             </motion.p>
             <motion.h1
+
                 animate={{color: hover ? 'white' : '#52565A', marginBottom: hover ? '15px' : '0'}}
             >{title}</motion.h1>
             </div>
