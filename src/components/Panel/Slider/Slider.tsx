@@ -108,7 +108,10 @@ const Slider = () => {
 
     const lineVariants = {
         hidden: { width: 0 },
-        visible: { width: 200, transition: { duration: 0.5, ease: "easeOut" } }
+        visible: {
+            width: 300,
+            transition: { duration: 0.5, ease: "easeOut" }
+        }
     };
     return <div className={styles.wrapper}>
         <motion.div
@@ -155,19 +158,18 @@ const Slider = () => {
                                 animate={{}}
                                 exit={{}}
                     >
-                        <motion.div className={styles.line} variants={lineVariants} exit={'hidden'} initial={'hidden'}
-                                    animate={'visible'} key={imgs[imgIndex]}/>
+                        <motion.div className={styles.lineLeft} variants={lineVariants} animate={'visible'} key={imgs[imgIndex]} exit={'hidden'} initial={'hidden'}/>
 
                         {/*<motion.p>{dataSlides[imgIndex].additional}</motion.p>*/}
                         <AnimatedTextCharacter text={dataSlides[imgIndex].additional}/>
                         <AnimatedTextWord text={dataSlides[imgIndex].title}/>
-                        <AnimatedTextWord text={dataSlides[imgIndex].link}/>
+                        <AnimatedTextWord text={dataSlides[imgIndex].description}/>
                         {/*<motion.h1>{dataSlides[imgIndex].title}</motion.h1>*/}
                         {/*<motion.p>{dataSlides[imgIndex].title}</motion.p>*/}
                         <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
-                        <motion.div className={styles.line} variants={lineVariants} exit={'hidden'} initial={'hidden'}
-                                    animate={'visible'} key={imgs[imgIndex]}/>
-
+                        {/*<motion.div className={styles.line} variants={lineVariants} exit={'hidden'} initial={'hidden'}*/}
+                        {/*            animate={'visible'} key={imgs[imgIndex]}/>*/}
+                        <motion.div className={styles.lineRight} variants={lineVariants} animate={'visible'} key={imgs[imgIndex]} exit={'hidden'} initial={'hidden'}/>
                     </motion.div>
 
                 </>
