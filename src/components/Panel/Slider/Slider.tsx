@@ -53,6 +53,7 @@ const AUTO_DELAY = 1000;
 const Slider = () => {
     const [imgIndex, setImgIndex] = useState(0);
 
+
     const controls = useAnimation();
 
     const imageVariants = {
@@ -105,7 +106,10 @@ const Slider = () => {
         controls.start("visible");
     }, [controls, imgIndex]);
 
-
+    const lineVariants = {
+        hidden: { width: 0 },
+        visible: { width: 200, transition: { duration: 0.5, ease: "easeOut" } }
+    };
     return <div className={styles.wrapper}>
         <motion.div
             className={styles.container}
@@ -151,6 +155,9 @@ const Slider = () => {
                                 animate={{}}
                                 exit={{}}
                     >
+                        <motion.div className={styles.line} variants={lineVariants} exit={'hidden'} initial={'hidden'}
+                                    animate={'visible'} key={imgs[imgIndex]}/>
+
                         {/*<motion.p>{dataSlides[imgIndex].additional}</motion.p>*/}
                         <AnimatedTextCharacter text={dataSlides[imgIndex].additional}/>
                         <AnimatedTextWord text={dataSlides[imgIndex].title}/>
@@ -158,6 +165,9 @@ const Slider = () => {
                         {/*<motion.h1>{dataSlides[imgIndex].title}</motion.h1>*/}
                         {/*<motion.p>{dataSlides[imgIndex].title}</motion.p>*/}
                         <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
+                        <motion.div className={styles.line} variants={lineVariants} exit={'hidden'} initial={'hidden'}
+                                    animate={'visible'} key={imgs[imgIndex]}/>
+
                     </motion.div>
 
                 </>
@@ -240,10 +250,12 @@ const Images = ({imgIndex}: { imgIndex: number; }) => {
                                        animate={{opacity: imgIndex === idx ? 1 : .5}}
                     >
                         <div className={styles.text}>
+                            {/*<motion.div className={styles.line} variants={lineVariants}/>*/}
                             <p>{dataSlides[idx].additional}</p>
                             <h1>{dataSlides[idx].title}</h1>
                             <p>{dataSlides[idx].title}</p>
                             <Link to={dataSlides[idx].link}>{dataSlides[idx].buttonText}</Link>
+                            <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
                         </div>
                     </motion.div>
                 })
