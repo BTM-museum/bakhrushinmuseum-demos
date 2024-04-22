@@ -7,7 +7,7 @@ import {excursions} from "../../../store/excursions/excursions";
 import {Link} from "react-router-dom";
 import {exhibitions} from "../../../store/exhibitions/exhibitions";
 import {expositions} from "../../../store/expositions/expositions";
-import {useInView} from "framer-motion";
+import {useInView, motion} from "framer-motion";
 
 const EventWidget = () => {
     const [sectionActive, setSectionActive] = React.useState<number>(0);
@@ -35,14 +35,18 @@ const EventWidget = () => {
 
 
     return <div className={styles.wrapper} ref={ref}>
-        <div className={styles.header}>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            className={styles.header}>
             <div className={styles.sectionGroups}>{sections.map((section, i) => <h1
                 className={styles.sectionTitle}
                 style={{color: sectionActive === i ? '#54565A' : ''}}
                 onClick={() => setSectionActive(i)}
                 key={i}>{section.title}</h1>)}</div>
             <Link to={sections[sectionActive].link}>{`Все ${sections[sectionActive].title}`}</Link>
-        </div>
+        </motion.div>
         <div className={styles.body}>
             {   sectionActive === 0 && expositionsData.slice(-3).map((item, i) => <EventCard id={item.id}
                                                                                    link={`/exposition/${item.link}`}

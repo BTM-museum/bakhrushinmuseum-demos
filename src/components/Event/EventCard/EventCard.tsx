@@ -31,8 +31,16 @@ const EventCard = (event: IEvent) => {
             className={styles.imageContainer}
             style={{transform: selectedEvent ? 'scale(1.03)' : 'scale(1)'}}
         >
-            <motion.img src={event.image} style={{transform: selectedEvent ? 'scale(1.05)' : 'scale(1)'}} alt={event.title}
+            <motion.img
+                src={event.image}
+                style={{transform: selectedEvent ? 'scale(1.05)' : 'scale(1)'}}
+                alt={event.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
 
+                transition={{ duration: 0.3, type: 'ease' }}
+                viewport={{ once: false, amount: 0.5 }}
             />
             {event.type === 'pro' && <p className={styles.type}><div/>{'ПРО'}</p>}
 

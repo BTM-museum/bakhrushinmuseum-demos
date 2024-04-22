@@ -93,6 +93,7 @@ const Slider = () => {
     //         controls.start("move");
     //     });
     // }, [controls, imgIndex]);  // Добавьте imgIndex в список зависимостей
+
     useEffect(() => {
         controls.start("visible");
     }, [controls, imgIndex]);
