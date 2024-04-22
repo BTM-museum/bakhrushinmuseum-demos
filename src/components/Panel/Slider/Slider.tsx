@@ -4,8 +4,10 @@ import slider1 from '../static/slide1.jpg'
 import slider2 from '../static/slide2.jpg'
 import arrow from '../static/arrow.svg';
 import {motion, useAnimation, useMotionValue, useMotionValueEvent} from 'framer-motion';
-import {Dispatch, SetStateAction, useEffect, useState} from "react";
+import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import AnimatedTextWord from "../../../helpers/AnimatedTextCharacter/AnimatedTextWord";
+import AnimatedTextCharacter from "../../../helpers/AnimatedTextCharacter/AnimatedTextCharacter";
 
 const imgs = [
     slider0, slider1, slider2
@@ -127,9 +129,12 @@ const Slider = () => {
                         animate={{      }}
                         exit={{     }}
             >
-                <motion.p>{dataSlides[imgIndex].additional}</motion.p>
-                <motion.h1>{dataSlides[imgIndex].title}</motion.h1>
-                <motion.p>{dataSlides[imgIndex].title}</motion.p>
+                {/*<motion.p>{dataSlides[imgIndex].additional}</motion.p>*/}
+                <AnimatedTextCharacter text={dataSlides[imgIndex].additional} />
+                <AnimatedTextWord text={dataSlides[imgIndex].title} />
+                <AnimatedTextWord text={dataSlides[imgIndex].link} />
+                {/*<motion.h1>{dataSlides[imgIndex].title}</motion.h1>*/}
+                {/*<motion.p>{dataSlides[imgIndex].title}</motion.p>*/}
                 <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
             </motion.div>
 
