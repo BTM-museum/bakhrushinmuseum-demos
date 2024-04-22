@@ -45,9 +45,12 @@ const Header = () => {
                     <img src={BMText} alt="BMText" />
                 </Link>
                 <div className={styles.btnGroup}>
-                    <img src={eye} alt="Eye" className={styles.icon} />
-                    <img src={search} alt="Eye" className={styles.icon} />
-                    <img src={account} alt="Eye" className={styles.icon} />
+                    <button>{'Магазин'}</button>
+                    <button>{'Купить билет'}</button>
+                    <img src={eye} alt="Eye" className={styles.icon}/>
+                    <img src={search} alt="Eye" className={styles.icon}/>
+                    <img src={account} alt="Eye" className={styles.icon}/>
+                    <button>{'РУС'}</button>
                 </div>
             </div>
             <div className={styles.menu}>

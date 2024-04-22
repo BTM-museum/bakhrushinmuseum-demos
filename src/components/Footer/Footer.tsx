@@ -3,6 +3,7 @@ import styles from "./Footer.module.scss";
 import ministerstvo from "./static/ministerstvo.svg";
 import gosuslugi from "./static/gosuslugi.svg";
 import cultura from "./static/cultura.svg";
+import kachestvo from './static/kachestvo.svg';
 import yt from "./static/yt.svg";
 import rt from "./static/rt.svg";
 import vk from "./static/vk.svg";
@@ -14,7 +15,6 @@ import {about} from "../../store/about/about";
 import {exibitionsAndEvents} from "../../store/exibitionsAndEvents/exibitionsAndEvents";
 import {additional} from "../../store/additional/additional";
 import {IArticle} from "../../types";
-
 
 
 const Footer = () => {
@@ -75,37 +75,57 @@ const Footer = () => {
     return <div className={styles.wrapper}>
         <div className={styles.content}>
             <div className={styles.block}>
-                <Link to={visitorsData.link}>{visitorsData.title}</Link>
-                {
-                    visitorsData && visitorsData.menu && visitorsData.menu.map((item, i) => <Link key={i}
-                                                                                                  to={`visitors/${item.link}`}>{item.title}</Link>)
-                }
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <Link to={visitorsData.link} className={styles.title}>{visitorsData.title}</Link>
+
+                    {
+                        visitorsData && visitorsData.menu && visitorsData.menu.map((item, i) => <Link key={i}
+                                                                                                      to={`visitors/${item.link}`}>{item.title}</Link>)
+                    }
+                </div>
+                <img src={ministerstvo} alt="ministerstvo"/>
             </div>
 
             <div className={styles.block}>
-                <Link to={`/about/${aboutData.link}`}>{aboutData.title}</Link>
-                {
-                    aboutData && aboutData.menu && aboutData.menu.map((item, i) => <Link key={i}
-                                                                                         to={`/about${item.link}`}>{item.title}</Link>)
-                }
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <Link to={`/about/${aboutData.link}`} className={styles.title}>{aboutData.title}</Link>
+
+                    {
+                        aboutData && aboutData.menu && aboutData.menu.map((item, i) => <Link key={i}
+                                                                                             to={`/about${item.link}`}>{item.title}</Link>)
+                    }
+                </div>
+                <img src={gosuslugi} alt="gosuslugi"/>
             </div>
 
             <div className={styles.block}>
-                <Link to={exibitionsAndEventsData.link}>{exibitionsAndEventsData.title}</Link>
-                {
-                    exibitionsAndEventsData && exibitionsAndEventsData.menu && exibitionsAndEventsData.menu.map((item, i) =>
-                        <Link key={i}
-                              to={item.link}>{item.title}</Link>)
-                }
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <Link to={exibitionsAndEventsData.link} className={styles.title}>{exibitionsAndEventsData.title}</Link>
+
+                    {
+                        exibitionsAndEventsData && exibitionsAndEventsData.menu && exibitionsAndEventsData.menu.map((item, i) =>
+                            <Link key={i}
+                                  to={item.link}>{item.title}</Link>)
+                    }
+                </div>
+                <img src={cultura} alt="cultura"/>
             </div>
 
             <div className={styles.block}>
-                <Link to={additionalData.link}>{additionalData.title}</Link>
-                {
-                    additionalData && additionalData.menu && additionalData.menu.map((item, i) =>
-                        <Link key={i}
-                              to={item.link}>{item.title}</Link>)
-                }
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <Link to={additionalData.link} className={styles.title}>{additionalData.title}</Link>
+                    {
+                        additionalData && additionalData.menu && additionalData.menu.map((item, i) =>
+                            <Link key={i}
+                                  to={item.link}>{item.title}</Link>)
+                    }
+                </div>
+                <div className={styles.imgGroup}>
+                    <img src={rt} alt="rt"/>
+                    <img src={tg} alt="tg"/>
+                    <img src={vk} alt="vk"/>
+                    <img src={yt} alt="yt"/>
+                </div>
             </div>
         </div>
     </div>

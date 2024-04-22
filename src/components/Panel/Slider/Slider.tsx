@@ -2,7 +2,8 @@ import styles from './Slider.module.scss';
 import slider0 from '../static/slide0.jpg'
 import slider1 from '../static/slide1.jpg'
 import slider2 from '../static/slide2.jpg'
-import {motion, useMotionValue, useMotionValueEvent} from 'framer-motion';
+import arrow from '../static/arrow.svg';
+import {motion, useAnimation, useMotionValue, useMotionValueEvent} from 'framer-motion';
 import {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
@@ -11,9 +12,27 @@ const imgs = [
 ];
 
 const dataSlides = [
-    { title: 'title 0', additional: 'Additional text', description: 'title 0 description', buttonText: 'button 0', link: 'link0' },
-    { title: 'title 1', additional: 'Additional text', description: 'title 1 description', buttonText: 'button 1', link: 'link1' },
-    { title: 'title 2', additional: 'Additional text', description: 'title 2 description', buttonText: 'button 2', link: 'link2' },
+    {
+        title: 'Заголовок 0',
+        additional: 'Текст сверху 0',
+        description: 'Описание 0',
+        buttonText: 'Кнопка 0',
+        link: 'link0'
+    },
+    {
+        title: 'Заголовок 1',
+        additional: 'Текст сверху 1',
+        description: 'Описание 1',
+        buttonText: 'Кнопка 1',
+        link: 'link1'
+    },
+    {
+        title: 'Заголовок 2',
+        additional: 'Текст сверху 2',
+        description: 'Описание 2',
+        buttonText: 'Кнопка 2',
+        link: 'link2'
+    },
 ]
 
 const DRAG_BUFFER = 50;
@@ -21,7 +40,54 @@ const AUTO_DELAY = 1000;
 
 
 const Slider = () => {
-    const [ imgIndex, setImgIndex] = useState(2);
+    const controls = useAnimation();
+
+    useEffect(() => {
+        controls.start("visible").then(() => {
+            controls.start("move");
+        });
+    }, []);
+
+    const imageVariants = {
+        initial: {
+            opacity: 0,
+            backgroundPositionX: '0%',
+            backgroundPositionY: '0%'
+        },
+        visible: {
+            opacity: 0.8,
+            transition: { duration: 1, ease: 'easeInOut' }
+        },
+        move: {
+            backgroundPositionX: ['0%', '100%', '0%'],
+            backgroundPositionY: ['0%', '100%', '0%'],
+            transition: {
+                duration: 10,  // Реалистичное значение для продолжительности анимации
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "mirror" as 'mirror' | 'reverse' | 'loop'
+            }
+        }
+    };
+
+
+
+    const [imgIndex, setImgIndex] = useState(0);
+
+    const useNextSlide = () => {
+        if (imgIndex > imgs.length - 2) {
+            setImgIndex(0);
+        } else {
+            setImgIndex(imgIndex + 1);
+        }
+    };
+    const usePrevSlide = () => {
+        if (imgIndex < 1) {
+            setImgIndex(imgs.length - 1);
+        } else {
+            setImgIndex(imgIndex - 1);
+        }
+    };
 
     return <div className={styles.wrapper}>
         <motion.div
@@ -30,28 +96,31 @@ const Slider = () => {
             <motion.div key={imgIndex}
                         style={{
                             backgroundImage: `url(${imgs[imgIndex]})`,
-                            backgroundSize: "cover",
                             backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'center'
-
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center center',
+                            zIndex: 0,
                         }}
                         className={styles.img}
-                        initial={{ backgroundPositionX: 0, backgroundPositionY: 0 }}
-                        animate={{ backgroundPositionX: ['0%', '100%', '0%'], backgroundPositionY: ['0%', '100%', '0%'] }} // Изначально, в конец и обратно
-                        transition={{
-                            repeat: Infinity,
-                            duration: 100,
-                            ease: "linear",
-                            repeatType: "mirror"  // Плавное зеркальное отражение для обратного движения
+                        variants={imageVariants}
+                        exit={{opacity: 0}}
+                        initial="initial"
+                        animate="visible"
+                        onAnimationComplete={() => {
+                            // Анимация прозрачности завершена, начинаем анимацию перемещения
+                            controls.start("move");
                         }}
             >
-                <div className={styles.text}>
-                    <p>{dataSlides[imgIndex].additional}</p>
-                    <h1>{dataSlides[imgIndex].title}</h1>
-                    <p>{dataSlides[imgIndex].title}</p>
+                <motion.div className={styles.text} key={imgIndex}>
+                    <motion.p>{dataSlides[imgIndex].additional}</motion.p>
+                    <motion.h1>{dataSlides[imgIndex].title}</motion.h1>
+                    <motion.p>{dataSlides[imgIndex].title}</motion.p>
                     <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
-                </div>
+                </motion.div>
             </motion.div>
+            <img onClick={usePrevSlide} src={arrow} alt="arrow" className={styles.petal}
+                 style={{left: '1vw', transform: 'rotate(-180deg)'}}/>
+            <img onClick={useNextSlide} src={arrow} alt="arrow" className={styles.petal}/>
         </motion.div>
     </div>
 }
@@ -111,18 +180,19 @@ const Slider = () => {
 //     </div>
 // };
 
-const Images = ({imgIndex}: {imgIndex: number;}) => {
+const Images = ({imgIndex}: { imgIndex: number; }) => {
     return (
         <>
             {
                 imgs.map((imgSrc, idx) => {
                     return <motion.div key={idx}
-                                       style={{backgroundImage: `url(${imgSrc})`,
+                                       style={{
+                                           backgroundImage: `url(${imgSrc})`,
                                            backgroundSize: "cover",
                                            backgroundPosition: "center center",
                                        }}
                                        className={styles.img}
-                        animate={{ opacity: imgIndex === idx ? 1 : .5 }}
+                                       animate={{opacity: imgIndex === idx ? 1 : .5}}
                     >
                         <div className={styles.text}>
                             <p>{dataSlides[idx].additional}</p>
@@ -138,11 +208,14 @@ const Images = ({imgIndex}: {imgIndex: number;}) => {
 };
 
 
-const Dots = ({imgIndex, setImgIndex}: { imgIndex: number; setImgIndex: Dispatch<SetStateAction<number>>}) => {
+const Dots = ({imgIndex, setImgIndex}: { imgIndex: number; setImgIndex: Dispatch<SetStateAction<number>> }) => {
     return <div className={styles.dots}>
         {
             imgs.map((imgSrc, idx) => {
-                return <button key={idx} onClick={() => setImgIndex(idx)} className={styles.dot} style={{ backgroundColor: idx === imgIndex ? 'white' : 'rgba(255, 255, 255, 0.51)', width: idx === imgIndex ? '40px' : '20px' }}/>
+                return <button key={idx} onClick={() => setImgIndex(idx)} className={styles.dot} style={{
+                    backgroundColor: idx === imgIndex ? 'white' : 'rgba(255, 255, 255, 0.51)',
+                    width: idx === imgIndex ? '40px' : '20px'
+                }}/>
             })
         }
     </div>

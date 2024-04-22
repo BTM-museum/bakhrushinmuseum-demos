@@ -49,6 +49,7 @@
   justify-content: space-between;
   padding: 0 10px;
 
+  align-items: center;
 }
 
 .logo {
@@ -63,5 +64,21 @@
 }
 
 .btnGroup {
+  display: flex;
+  flex-direction: row;
+  button {
+    border: 1px solid white;
+    background: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
 
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+
+  }
 }
