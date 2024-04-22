@@ -30,19 +30,23 @@
 
 .title {
   font-size: 28px;
-  font-family: "TT Nooks", sans-serif;
   color: white;
   height: 44px;
 
   margin-bottom: 50px;
   padding: 0;
+  h1 {
+    color: white;
+  }
 }
 
 .imgGroup {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  //justify-content: center;
+  gap: 20px;
+  align-items: center;
   img {
-    width: 44px;
+    width: 34px;
   }
 }

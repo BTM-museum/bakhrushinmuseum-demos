@@ -40,29 +40,27 @@ const AUTO_DELAY = 1000;
 
 
 const Slider = () => {
-    const controls = useAnimation();
+    const [imgIndex, setImgIndex] = useState(0);
 
-    useEffect(() => {
-        controls.start("visible").then(() => {
-            controls.start("move");
-        });
-    }, []);
+    const controls = useAnimation();
 
     const imageVariants = {
         initial: {
             opacity: 0,
             backgroundPositionX: '0%',
-            backgroundPositionY: '0%'
+            backgroundPositionY: '0%',
         },
         visible: {
-            opacity: 0.8,
-            transition: { duration: 1, ease: 'easeInOut' }
+            opacity: 0.5,
+            transition: { duration: 1, ease: 'easeInOut' },
+            zIndex: 0,
         },
         move: {
             backgroundPositionX: ['0%', '100%', '0%'],
             backgroundPositionY: ['0%', '100%', '0%'],
+
             transition: {
-                duration: 10,  // Реалистичное значение для продолжительности анимации
+                duration: 45,  // Реалистичное значение для продолжительности анимации
                 ease: "linear",
                 repeat: Infinity,
                 repeatType: "mirror" as 'mirror' | 'reverse' | 'loop'
@@ -72,7 +70,6 @@ const Slider = () => {
 
 
 
-    const [imgIndex, setImgIndex] = useState(0);
 
     const useNextSlide = () => {
         if (imgIndex > imgs.length - 2) {
@@ -89,35 +86,53 @@ const Slider = () => {
         }
     };
 
+    // useEffect(() => {
+    //     controls.start("visible").then(() => {
+    //         controls.start("move");
+    //     });
+    // }, [controls, imgIndex]);  // Добавьте imgIndex в список зависимостей
+    useEffect(() => {
+        controls.start("visible");
+    }, [controls, imgIndex]);
+
+
     return <div className={styles.wrapper}>
         <motion.div
             className={styles.container}
         >
-            <motion.div key={imgIndex}
+            <motion.div key={imgs[imgIndex]}
                         style={{
                             backgroundImage: `url(${imgs[imgIndex]})`,
                             backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'cover',
+                            backgroundSize: '108%',
+
                             backgroundPosition: 'center center',
-                            zIndex: 0,
+                            // padding: '20px',
                         }}
                         className={styles.img}
                         variants={imageVariants}
-                        exit={{opacity: 0}}
+                        exit='initial'
                         initial="initial"
-                        animate="visible"
+                        animate={controls}
                         onAnimationComplete={() => {
                             // Анимация прозрачности завершена, начинаем анимацию перемещения
                             controls.start("move");
                         }}
+
+            />
+
+            <motion.div className={styles.text}
+                        key={imgIndex}
+                        initial={{       }}
+                        animate={{      }}
+                        exit={{     }}
             >
-                <motion.div className={styles.text} key={imgIndex}>
-                    <motion.p>{dataSlides[imgIndex].additional}</motion.p>
-                    <motion.h1>{dataSlides[imgIndex].title}</motion.h1>
-                    <motion.p>{dataSlides[imgIndex].title}</motion.p>
-                    <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
-                </motion.div>
+                <motion.p>{dataSlides[imgIndex].additional}</motion.p>
+                <motion.h1>{dataSlides[imgIndex].title}</motion.h1>
+                <motion.p>{dataSlides[imgIndex].title}</motion.p>
+                <Link to={dataSlides[imgIndex].link}>{dataSlides[imgIndex].buttonText}</Link>
             </motion.div>
+
             <img onClick={usePrevSlide} src={arrow} alt="arrow" className={styles.petal}
                  style={{left: '1vw', transform: 'rotate(-180deg)'}}/>
             <img onClick={useNextSlide} src={arrow} alt="arrow" className={styles.petal}/>

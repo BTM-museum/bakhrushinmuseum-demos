@@ -76,7 +76,7 @@ const Footer = () => {
         <div className={styles.content}>
             <div className={styles.block}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Link to={visitorsData.link} className={styles.title}>{visitorsData.title}</Link>
+                    <Link to={visitorsData.link} className={styles.title}><h1>{visitorsData.title}</h1></Link>
 
                     {
                         visitorsData && visitorsData.menu && visitorsData.menu.map((item, i) => <Link key={i}
@@ -88,7 +88,7 @@ const Footer = () => {
 
             <div className={styles.block}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Link to={`/about/${aboutData.link}`} className={styles.title}>{aboutData.title}</Link>
+                    <Link to={`/about/${aboutData.link}`} className={styles.title}><h1>{aboutData.title}</h1></Link>
 
                     {
                         aboutData && aboutData.menu && aboutData.menu.map((item, i) => <Link key={i}
@@ -100,7 +100,7 @@ const Footer = () => {
 
             <div className={styles.block}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Link to={exibitionsAndEventsData.link} className={styles.title}>{exibitionsAndEventsData.title}</Link>
+                    <Link to={exibitionsAndEventsData.link} className={styles.title}><h1>{exibitionsAndEventsData.title}</h1></Link>
 
                     {
                         exibitionsAndEventsData && exibitionsAndEventsData.menu && exibitionsAndEventsData.menu.map((item, i) =>
@@ -113,7 +113,7 @@ const Footer = () => {
 
             <div className={styles.block}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <Link to={additionalData.link} className={styles.title}>{additionalData.title}</Link>
+                    <Link to={additionalData.link} className={styles.title}><h1>{additionalData.title}</h1></Link>
                     {
                         additionalData && additionalData.menu && additionalData.menu.map((item, i) =>
                             <Link key={i}
@@ -121,10 +121,21 @@ const Footer = () => {
                     }
                 </div>
                 <div className={styles.imgGroup}>
-                    <img src={rt} alt="rt"/>
-                    <img src={tg} alt="tg"/>
-                    <img src={vk} alt="vk"/>
-                    <img src={yt} alt="yt"/>
+                    <a href={'https://rutube.ru/channel/23745556/'}>
+                        <img src={rt} alt="rt"/>
+                    </a>
+                    <a href={'https://t.me/bakhrushinmuseum'}>
+                        <img src={tg} alt="tg"/>
+
+                    </a>
+                    <a href={'https://vk.com/bahrushinmuseum'}>
+                        <img src={vk} alt="vk"/>
+
+                    </a>
+                    <a href={'https://www.youtube.com/@bakhrushinmuseum'}>
+                        <img src={yt} alt="yt"/>
+                    </a>
+
                 </div>
             </div>
         </div>

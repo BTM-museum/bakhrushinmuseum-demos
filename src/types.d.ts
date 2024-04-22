@@ -61,3 +61,18 @@ interface IArticle {
     description: string;
     menu?: IArticle[]
 }
+
+interface IEntity {
+    id: number;
+    title: string;
+    link: string;
+}
+
+
+interface IFilials extends IEntity {
+    imageUrl: string;
+    imageAddUrl: string;
+    backgroundColor: string;
+    position: string;
+    type: "quarter" | "filial";
+}
