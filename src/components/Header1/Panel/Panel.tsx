@@ -119,7 +119,6 @@ const Panel = ({ panel }: Props) => {
                         </AnimatePresence>
                     </motion.div>
                 }
-
             </AnimatePresence>
         </motion.div>}
     </AnimatePresence>

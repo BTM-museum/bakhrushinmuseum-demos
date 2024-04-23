@@ -21,16 +21,11 @@ import BMText from './assets/BMText.svg';
 import eye from './assets/eye.svg';
 import search from './assets/search.svg';
 import account from './assets/account.svg';
-import {motion, useAnimation} from "framer-motion";
+import {AnimatePresence, motion, useAnimation} from "framer-motion";
 
 const Header = () => {
 
     const { scrollY, scrollDirection } = useScrollDirection();
-
-
-    const visitorsData = useRecoilValue(visitors);
-    const [selectedMenu, setSelectedMenu] = useState<IArticle | undefined>(undefined)
-    const [lastDown, setLastDown] = useState<number>(0)
 
     const exibitionsAndEventsData = useRecoilValue(exibitionsAndEvents);
     const yourdelfData = useRecoilValue(yourself);
@@ -39,6 +34,10 @@ const Header = () => {
     const onlineData = useRecoilValue(online);
     const proData = useRecoilValue(pro);
     const supportData = useRecoilValue(support);
+    const visitorsData = useRecoilValue(visitors);
+    const [selectedMenu, setSelectedMenu] = useState<IArticle | undefined>(undefined)
+    const [lastDown, setLastDown] = useState<number>(0)
+
 
     useEffect(() => {
         console.log(scrollDirection);
@@ -160,19 +159,23 @@ const Header = () => {
                     setLastDown(8);
                 }} to={supportData.link}>{supportData.title}</Link>}
 
-                {
-                    selectedMenu && selectedMenu.menu && <Panel element={selectedMenu} setElement={setSelectedMenu}/>
-                }
+                <AnimatePresence>
+                    {
+                        selectedMenu && selectedMenu.menu && <Panel element={selectedMenu} setElement={setSelectedMenu}/>
+                    }
+                </AnimatePresence>
             </div>
         </motion.header>
-        {
-            selectedMenu && selectedMenu.menu && <motion.div initial={{opacity: 0}} animate={{opacity: 1}} style={{
-                background: 'rgba(0,0,0,0.53)',
-                height: '5900px',
-                width: '100vw',
-                position: 'absolute',
-                zIndex: 1
-            }}/>}
+        <AnimatePresence>
+            {
+                selectedMenu && selectedMenu.menu && <motion.div key={selectedMenu.id} initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} style={{
+                    background: 'rgba(0,0,0,0.53)',
+                    height: '5900px',
+                    width: '100vw',
+                    position: 'absolute',
+                    zIndex: 1
+                }}/>}
+        </AnimatePresence>
 
     </>
 };
