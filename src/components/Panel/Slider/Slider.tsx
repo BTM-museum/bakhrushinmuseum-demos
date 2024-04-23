@@ -8,6 +8,8 @@ import React, {Dispatch, SetStateAction, useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import AnimatedTextWord from "../../../helpers/AnimatedTextCharacter/AnimatedTextWord";
 import AnimatedTextCharacter from "../../../helpers/AnimatedTextCharacter/AnimatedTextCharacter";
+
+import filials from "../static/filials.png";
 // @ts-ignore
 import vidio from '../static/promo.mp4';
 
@@ -178,6 +180,7 @@ const Slider = () => {
             <img onClick={usePrevSlide} src={arrow} alt="arrow" className={styles.petal}
                  style={{left: '1vw', transform: 'rotate(-180deg)'}}/>
             <img onClick={useNextSlide} src={arrow} alt="arrow" className={styles.petal}/>
+            <img src={filials} alt={''} className={styles.filials}/>
         </motion.div>
     </div>
 }
