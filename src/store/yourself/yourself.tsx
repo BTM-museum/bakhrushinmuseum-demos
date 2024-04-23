@@ -1,5 +1,9 @@
 import {atom} from 'recoil';
 import {IArticle, INew} from "../../types";
+import image1 from '../../static/images/eskiz-dekoraczii-k-spektaklyu-«skazka-o-czare-saltane».-senatorov-i.-chetvyortoe-dejstvie.-pir-u-gvidona.-1910-e-gg.png';
+import image2 from '../../static/images/eskiz-dekoraczii-k-spektaklyu-«hovanshhina».-korovin-k.a.-streleczkoe-gnezdo.-imperatorskij-bolshoj-teatr.-1912-g.png';
+import image3 from '../../static/images/eskiz-dekoraczii-k-opere-«mlada».-fedotov-i.s.-svyashhennoe-ozero.-opera-s.i.-zimina.-1913-g.png'
+
 
 
 export const yourself = atom<IArticle>({
@@ -7,7 +11,7 @@ export const yourself = atom<IArticle>({
     default: {
         id: 2,
         title: "Узнавайте сами",
-        images: ['https://www.gctm.ru/wp-content/uploads/2024/04/eskiz-dekoraczii-k-spektaklyu-%C2%ABhovanshhina%C2%BB.-korovin-k.a.-streleczkoe-gnezdo.-imperatorskij-bolshoj-teatr.-1912-g.png', 'https://www.gctm.ru/wp-content/uploads/2024/04/eskiz-dekoraczii-k-opere-%C2%ABmlada%C2%BB.-fedotov-i.s.-svyashhennoe-ozero.-opera-s.i.-zimina.-1913-g.png'],
+        images: [image1, image2],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
         link: 'yourself',
         description: 'Разводная страница с разделами.',
@@ -15,7 +19,7 @@ export const yourself = atom<IArticle>({
             {
                 id: 0,
                 title: "Лекторий \"Бахрушинская академия\"",
-                images: [''],
+                images: [image3],
                 page:
                     <h1>{'Страница со всеми лекционными программами и возможностью купить абонемент (как у Третьяковки)'}</h1>,
                 link: '/academy/',
@@ -24,7 +28,7 @@ export const yourself = atom<IArticle>({
             {
                 id: 1,
                 title: "Издания",
-                images: [''],
+                images: [image3, image2],
                 page:
                     <h1>{'Описательная страница об издательской деятельности, форма обратной связи и контакты издательского отдела, внизу список изданий Музея с фотографиями. - при клике на каждое издание переход на описательную страницу издания с информацией, переходом для покупки в интернет-магазин или возможностью скачать для чтения.'}</h1>,
                 link: '/edition/',
@@ -33,7 +37,7 @@ export const yourself = atom<IArticle>({
             {
                 id: 2,
                 title: "Коллекции онлайн",
-                images: [''],
+                images: [image3, image2],
                 page: <h1>{'Сайт сателлит - Колекции онлайн'}</h1>,
                 link: '/collection/',
                 description: 'Сайт сателлит - Колекции онлайн',
@@ -41,7 +45,7 @@ export const yourself = atom<IArticle>({
             {
                 id: 3,
                 title: "Научная библиотека",
-                images: [''],
+                images: [image3, image2],
                 page:
                     <h1>{'Описательная страница о научной библиотеке, форма обратной связи и контакты библиотеки- поставить пометку \\"ПРО\\"'}</h1>,
                 link: '/lib/',
@@ -50,7 +54,7 @@ export const yourself = atom<IArticle>({
             {
                 id: 4,
                 title: "Бахрушинские чтения",
-                images: [''],
+                images: [image3, image2],
                 page:
                     <h1>{"- описательная страница с общей информацией о конференции с фото/видео материалами, контакты организаторов, форма обратной связи с кнопкой \"принять участие\", программа будущей конференции, возможность перейти к архиву конференций, кнопкой перейти к онлайн трансляции (если такая будет)" +
                         "- отдельная страница по каждой конференции из архива с описанием, программой, фото/видео отчетом." +
@@ -63,7 +67,7 @@ export const yourself = atom<IArticle>({
             {
                 id: 5,
                 title: "Конференции и форумы",
-                images: [''],
+                images: [image3, image2],
                 page:
                     <h1>{"Разводная страница с общей информацией о разделе и разделением вглубь на \"конференции и форумы\" с возможностью перехода на каждый подраздел" +
                         "- подраздел \"конференции\" страница с перечнем всех конференций и возможностью перехода на страницу каждой отдельной конференции" +
