@@ -70,7 +70,7 @@ const Header = () => {
                 {visitorsData && <Link style={{
                     transition: 'all .3s ease',
                     borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 1 ? 'white' : '',
+                    backgroundColor: lastDown === 1 ? '#fafafa' : '',
                     color: lastDown === 1 ? 'black' : 'white',
                     padding: '4px 20px'
                 }} onMouseEnter={() => {
@@ -81,7 +81,7 @@ const Header = () => {
                     style={{
                         transition: 'all .3s ease',
                         borderRadius: '3px 3px 0 0',
-                        backgroundColor: lastDown === 2 ? 'white' : '',
+                        backgroundColor: lastDown === 2 ? '#fafafa' : '',
                         color: lastDown === 2 ? 'black' : 'white',
 
                         padding: '4px 20px'
@@ -93,7 +93,7 @@ const Header = () => {
                 {yourdelfData && <Link style={{
                     transition: 'all .3s ease',
                     borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 3 ? 'white' : '',
+                    backgroundColor: lastDown === 3 ? '#fafafa' : '',
                     color: lastDown === 3 ? 'black' : 'white',
 
                     padding: '4px 20px'
@@ -104,7 +104,7 @@ const Header = () => {
                 {childrenData && <Link style={{
                     transition: 'all .3s ease',
                     borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 4 ? 'white' : '',
+                    backgroundColor: lastDown === 4 ? '#fafafa' : '',
                     color: lastDown === 4 ? 'black' : 'white',
                     padding: '4px 20px'
                 }} onMouseEnter={() => {
@@ -122,7 +122,7 @@ const Header = () => {
                 {onlineData && <Link style={{
                     transition: 'all .3s ease',
                     borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 6 ? 'white' : '',
+                    backgroundColor: lastDown === 6 ? '#fafafa' : '',
                     color: lastDown === 6 ? 'black' : 'white',
                     padding: '4px 20px'
                 }} onMouseEnter={() => {
@@ -132,7 +132,7 @@ const Header = () => {
                 {proData && <Link style={{
                     transition: 'all .3s ease',
                     borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 7 ? 'white' : '',
+                    backgroundColor: lastDown === 7 ? '#fafafa' : '',
                     color: lastDown === 7 ? 'black' : 'white',
                     padding: '4px 20px'
                 }} onMouseEnter={() => {
@@ -142,7 +142,7 @@ const Header = () => {
                 {supportData && <Link style={{
                     transition: 'all .3s ease',
                     borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 8 ? 'white' : '',
+                    backgroundColor: lastDown === 8 ? '#fafafa' : '',
                     color: lastDown === 8 ? 'black' : 'white',
                     padding: '4px 20px'
                 }} onMouseEnter={() => {
