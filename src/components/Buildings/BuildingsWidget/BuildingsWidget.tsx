@@ -14,6 +14,8 @@ import dop3 from "../../Filials/static/filials/mironova_dop.png";
 
 const BuildingsWidget = () => {
 
+
+
     const types: IEntity[] = [
         { id: 0, title: "Бахрушинский квартал", link: "" },
         { id: 1, title: "Филиалы", link: "" },
@@ -53,9 +55,9 @@ const BuildingsWidget = () => {
         <motion.div
             initial={{ opacity: 0, y: 40,  }}
             whileInView={{ opacity: 1, y: 0,  }}
-            exit={{ opacity: 0, y: 40,  }}
+            exit={{ opacity: 0, y: 0,  }}
             transition={{ duration: 0.3, type: 'ease' }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.1 }}
             key={selectType}
 
             className={styles.content}

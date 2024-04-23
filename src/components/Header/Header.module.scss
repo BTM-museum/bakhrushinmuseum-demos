@@ -39,8 +39,10 @@
   height: fit-content;
   font-size: 19px;
   padding: 10px 30px;
-  a {
+  > a {
     color: white;
+    flex-grow: 1;
+    text-align: center;
   }
 }
 
