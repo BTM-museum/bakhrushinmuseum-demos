@@ -35,6 +35,10 @@
   color: white;
   padding: 10px 0;
   cursor: pointer;
+
+  border-radius: 5px 5px 0 0;
+
+  transition: background-color 0.3s;
   img {
     padding-left: 4px;
     width: 1rem;

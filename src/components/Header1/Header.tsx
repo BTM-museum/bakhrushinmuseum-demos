@@ -31,6 +31,18 @@ const Header: React.FC = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [ up, setUp] = useState<boolean>(false);
+    const [ lastDown, setLastDown ] = useState<number>(0)
+
+
+    useEffect(() => {
+        if (!panel) {setLastDown(0);}
+    }, [panel])
+
+    useEffect(() => {
+        console.log(lastDown)
+        console.log(lastDown)
+    }, [lastDown])
+
 
     const controlNavbar = () => {
         if (typeof window !== 'undefined') {
@@ -122,7 +134,8 @@ const Header: React.FC = () => {
                         className={styles.item}
                         href={item.head.src}
                         key={index}
-                        onMouseEnter={() => setPanel(item)}
+                        onMouseEnter={() => {setPanel(item); setLastDown(index + 1)}}
+                        style={lastDown - 1 === index && item.link ? {background: '#54565A', padding: '10px 10px'} : { padding: '10px 10px'}}
                     >
                         {item.head.title}{item.link && <img src={arrow}/>}
                     </a>))}

@@ -18,7 +18,10 @@
   z-index: 2;
   width: 100%;
   height: fit-content;
+  padding: 30px 0;
+
   background-color: #8B1635;
+  background-color: #54565A;
   display: flex;
 
   h1, p {
@@ -41,6 +44,7 @@
   display: flex;
   flex-direction: column;
   width: 30%;
+  margin-left: 5%;
   flex: 1;
   a {
     img {
@@ -61,7 +65,7 @@
 .columnLast {
   //padding-left: 100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 55%;
 
   div {
