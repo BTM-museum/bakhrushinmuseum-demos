@@ -10,7 +10,7 @@ import {pro} from "../../store/pro/pro";
 import {support} from "../../store/support/support";
 import {Link} from "react-router-dom";
 import Panel from "./Panel/Panel";
-import {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {IArticle} from "../../types";
 
 import BMLogoLeft from './assets/BMLogoLeft.svg';
@@ -21,28 +21,36 @@ import BMText from './assets/BMText.svg';
 import eye from './assets/eye.svg';
 import search from './assets/search.svg';
 import account from './assets/account.svg';
+import {motion} from "framer-motion";
 
 const Header = () => {
 
     const visitorsData = useRecoilValue(visitors);
-    const [ selectedMenu, setSelectedMenu ] = useState<IArticle | undefined>(undefined)
+    const [selectedMenu, setSelectedMenu] = useState<IArticle | undefined>(undefined)
+    const [lastDown, setLastDown] = useState<number>(0)
 
     const exibitionsAndEventsData = useRecoilValue(exibitionsAndEvents);
-    const yourdelfData= useRecoilValue(yourself);
+    const yourdelfData = useRecoilValue(yourself);
     const childrenData = useRecoilValue(children);
     const labData = useRecoilValue(lab);
     const onlineData = useRecoilValue(online);
     const proData = useRecoilValue(pro);
     const supportData = useRecoilValue(support);
 
+    useEffect(() => {
+        if (selectedMenu === undefined) {
+            setLastDown(0);
+        }
+    }, [selectedMenu])
+
     return <>
         <header className={styles.wrapper}>
             <div className={styles.top}>
                 <Link to={'/'} className={styles.logo}>
-                    <img src={BMLogoLeft} alt="BMLogoLeft" />
-                    <img src={BMLogoLine} alt="BMLogoLine" />
-                    <img src={BMLogoRight} alt="BMLogoRight" />
-                    <img src={BMText} alt="BMText" />
+                    <img src={BMLogoLeft} alt="BMLogoLeft"/>
+                    <img src={BMLogoLine} alt="BMLogoLine"/>
+                    <img src={BMLogoRight} alt="BMLogoRight"/>
+                    <img src={BMText} alt="BMText"/>
                 </Link>
                 <div className={styles.btnGroup}>
                     <button className={styles.store}>{'Магазин'}</button>
@@ -56,20 +64,106 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.menu}>
-                {visitorsData && <Link onMouseEnter={() => { setSelectedMenu(visitorsData) }} to={visitorsData.link}>{visitorsData.title}</Link>}
-                {exibitionsAndEventsData && <Link onMouseEnter={() => { setSelectedMenu(exibitionsAndEventsData) }} to={exibitionsAndEventsData.link}>{exibitionsAndEventsData.title}</Link>}
-                {yourdelfData && <Link onMouseEnter={() => { setSelectedMenu(yourdelfData) }} to={yourdelfData.link}>{yourdelfData.title}</Link>}
-                {childrenData && <Link onMouseEnter={() => { setSelectedMenu(childrenData) }} to={childrenData.link}>{childrenData.title}</Link>}
-                {labData && <Link onMouseEnter={() => { setSelectedMenu(labData) }} to={labData.link}>{labData.title}</Link>}
-                {onlineData && <Link onMouseEnter={() => { setSelectedMenu(onlineData) }} to={onlineData.link}>{onlineData.title}</Link>}
-                {proData && <Link onMouseEnter={() => { setSelectedMenu(proData) }} to={proData.link}>{proData.title}</Link>}
-                {supportData && <Link onMouseEnter={() => { setSelectedMenu(supportData) }} to={supportData.link}>{supportData.title}</Link>}
+            <div className={styles.menu} onMouseLeave={() => {
+                setSelectedMenu(undefined)
+            }}>
+                {visitorsData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    backgroundColor: lastDown === 1 ? 'white' : '',
+                    color: lastDown === 1 ? 'black' : 'white',
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(visitorsData);
+                    setLastDown(1);
+                }} to={visitorsData.link}>{visitorsData.title}</Link>}
+                {exibitionsAndEventsData && <Link
+                    style={{
+                        transition: 'all .3s ease',
+                        borderRadius: '3px 3px 0 0',
+                        backgroundColor: lastDown === 2 ? 'white' : '',
+                        color: lastDown === 2 ? 'black' : 'white',
+
+                        padding: '4px 20px'
+                    }}
+                    onMouseEnter={() => {
+                    setSelectedMenu(exibitionsAndEventsData);
+                    setLastDown(2);
+                }} to={exibitionsAndEventsData.link}>{exibitionsAndEventsData.title}</Link>}
+                {yourdelfData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    backgroundColor: lastDown === 3 ? 'white' : '',
+                    color: lastDown === 3 ? 'black' : 'white',
+
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(yourdelfData);
+                    setLastDown(3);
+                }} to={yourdelfData.link}>{yourdelfData.title}</Link>}
+                {childrenData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    backgroundColor: lastDown === 4 ? 'white' : '',
+                    color: lastDown === 4 ? 'black' : 'white',
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(childrenData);
+                    setLastDown(4);
+                }} to={childrenData.link}>{childrenData.title}</Link>}
+                {labData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(labData);
+                    setLastDown(5);
+                }} to={labData.link}>{labData.title}</Link>}
+                {onlineData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    backgroundColor: lastDown === 6 ? 'white' : '',
+                    color: lastDown === 6 ? 'black' : 'white',
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(onlineData);
+                    setLastDown(6);
+                }} to={onlineData.link}>{onlineData.title}</Link>}
+                {proData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    backgroundColor: lastDown === 7 ? 'white' : '',
+                    color: lastDown === 7 ? 'black' : 'white',
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(proData);
+                    setLastDown(7);
+                }} to={proData.link}>{proData.title}</Link>}
+                {supportData && <Link style={{
+                    transition: 'all .3s ease',
+                    borderRadius: '3px 3px 0 0',
+                    backgroundColor: lastDown === 8 ? 'white' : '',
+                    color: lastDown === 8 ? 'black' : 'white',
+                    padding: '4px 20px'
+                }} onMouseEnter={() => {
+                    setSelectedMenu(supportData);
+                    setLastDown(8);
+                }} to={supportData.link}>{supportData.title}</Link>}
+
+                {
+                    selectedMenu && selectedMenu.menu && <Panel element={selectedMenu} setElement={setSelectedMenu}/>
+                }
             </div>
         </header>
         {
-            selectedMenu && selectedMenu.menu && <Panel element={selectedMenu} setElement={setSelectedMenu}/>
-        }
+            selectedMenu && selectedMenu.menu && <motion.div initial={{opacity: 0}} animate={{opacity: 1}} style={{
+                background: 'rgba(0,0,0,0.53)',
+                height: '100vh',
+                width: '100vw',
+                position: 'absolute',
+                zIndex: 1
+            }}/>}
+
     </>
 };
 

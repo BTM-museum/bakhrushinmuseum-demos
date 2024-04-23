@@ -104,34 +104,35 @@ export const expositions = atom<IEvent[]>({
         },
         {
             id: 9,
-            title: 'Экспозиция 9',
-            page: <h1>Экспозиция 9</h1>,
+            title: '«Семья Бахрушиных и залог счастливой жизни». 12+',
+            type: 'pro',
+            page: <h1>«Семья Бахрушиных и залог счастливой жизни». 12+</h1>,
             image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: 'Muzykalno-poeticheskij-perfoman7'
+            link: 'Semya-Bahrushinyh-i-zalog-schastlivoj-zhizni.-12+'
 
         },
         {
             id: 10,
-            title: 'Экспозиция 10',
-            page: <h1>Экспозиция 10</h1>,
-            image: image133,
+            title: 'Музыкально-поэтический перфоман «В ожидании тепла». 12+',
             type: 'pro',
+            page: <h1>Музыкально-поэтический перфоман «В ожидании тепла». 12+</h1>,
+            image: image145,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
-            link: 'Muzykalno-poeticheskij-perfoman8'
+            link: 'Muzykalno-poeticheskij-perfoman'
 
         },
         {
             id: 11,
-            title: 'Экспозиция 11',
-            page: <h1>Экспозиция 11</h1>,
+            title: 'Бахрушинский поддержит создание Театрального музея в Саратове',
             type: 'pro',
-            image: image133,
+            page: <h1>Бахрушинский поддержит создание Театрального музея в Саратове</h1>,
+            image: image134,
             date: {from: dayjs(), to: dayjs()},
-            position: 'Москва, улица Бахрушина, 31/12с1',
-            link: 'Muzykalno-poeticheskij-perfoman9'
+            position: 'Москва, улица Бахрушина, 31/12с1' ,
+            link: 'Bahrushinskij-podderzhit-sozdanie-Teatralnogo-muzeya-v-Saratove'
 
         },
     ]

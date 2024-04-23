@@ -46,9 +46,9 @@ const Panel = ({element, setElement}: Props) => {
         return <AnimatePresence>
             <motion.div
                 key={element.id}
-                initial={{opacity: 0, y: 10, height: '5%'}}
-                animate={{opacity: 1, y: 10, height: 'fit-content'}}
-                exit={{opacity: 0, y: 10, height: '5%'}}
+                initial={{opacity: 0, y: 0, height: '5%'}}
+                animate={{opacity: 1, y: 0, height: 'fit-content'}}
+                exit={{opacity: 0, y: 0, height: '5%'}}
                 className={styles.wrapper} onMouseLeave={() => {
                 setElement(undefined)
             }}>

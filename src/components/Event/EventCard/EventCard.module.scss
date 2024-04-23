@@ -1,5 +1,6 @@
 .wrapper {
-
+  max-width: 517px;
+  //max-height: 375px;
 }
 
 .imageContainer {
@@ -8,6 +9,8 @@
   align-items: center;
   overflow: hidden;
   //width: 110%;
+  max-width: 517px;
+  max-height: 375px;
   height: fit-content;
   img {
     width: 110%;

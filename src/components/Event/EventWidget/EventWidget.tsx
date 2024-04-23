@@ -29,7 +29,7 @@ const EventWidget = () => {
     const expositionsData = useRecoilValue(expositions);
     const excursionsData = useRecoilValue(excursions);
     const eventsData = useRecoilValue(events);
-    const exhibitionsData = useRecoilValue(exhibitions);
+    const exhibitionsData = useRecoilValue(expositions);
 
     console.log(exhibitionsData)
 
