@@ -14,7 +14,16 @@ const NewsWidget = () => {
         </div>
         <div className={styles.body}>
             {
-                newsData.map((news, index) => <NewsCard key={index} id={news.id} title={news.title} page={news.page} date={news.date} image={news.image} link={`/news/${news.link}`}/>)
+                newsData.slice(0, Math.ceil(newsData.length / 2)).map((news, index) => <NewsCard key={index} id={news.id} title={news.title} page={news.page}
+                                                                                                 date={news.date} image={news.image}
+                                                                                                 link={`/news/${news.link}`}/>)
+            }
+        </div>
+        <div className={styles.body}>
+            {
+                newsData.slice(Math.ceil(newsData.length / 2)).map((news, index) => <NewsCard key={index} id={news.id} title={news.title} page={news.page}
+                                                                                                 date={news.date} image={news.image}
+                                                                                                 link={`/news/${news.link}`}/>)
             }
         </div>
     </div>

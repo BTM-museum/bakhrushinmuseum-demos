@@ -29,6 +29,7 @@ const EventCard = (event: IEvent) => {
                  onMouseLeave={() => setSelectedEvent(false)}>
         <motion.div
 
+
             className={styles.imageContainer}
             style={{transform: selectedEvent ? 'scale(1.03)' : 'scale(1)'}}
         >
