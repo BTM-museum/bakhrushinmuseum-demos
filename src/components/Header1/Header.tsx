@@ -135,9 +135,13 @@ const Header: React.FC = () => {
                         href={item.head.src}
                         key={index}
                         onMouseEnter={() => {setPanel(item); setLastDown(index + 1)}}
-                        style={lastDown - 1 === index && item.link ? {background: '#54565A', padding: '10px 10px'} : { padding: '10px 10px'}}
+                        style={lastDown - 1 === index && item.link ? {background: '#fafafa', padding: '10px 10px', color: 'black'} : { padding: '10px 10px'}}
                     >
-                        {item.head.title}{item.link && <img src={arrow}/>}
+                        {item.head.title}{item.link &&
+                        <svg width="16" height="10" viewBox="0 0 36 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M34.5 1.5L18 17.5L1.5 1.5" stroke="white" stroke-width="2" style={{ stroke: !(lastDown - 1 === index) ? '#fff' : '#54565A'}}/>
+                        </svg>
+                    }
                     </a>))}
                     {panel && <Panel panel={panel}/>}
                 </div>

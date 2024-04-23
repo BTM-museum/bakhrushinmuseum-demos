@@ -56,6 +56,7 @@ const BuildingsWidget = () => {
             exit={{ opacity: 0, y: 40,  }}
             transition={{ duration: 0.3, type: 'ease' }}
             viewport={{ once: false, amount: 0.5 }}
+            key={selectType}
 
             className={styles.content}
         >

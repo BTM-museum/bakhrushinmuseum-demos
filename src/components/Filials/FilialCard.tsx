@@ -60,7 +60,7 @@ const FilialCard = ({ filial }: FilialCardProps) => {
                             onMouseEnter={() => setButtonHover(true)}
                             onMouseLeave={() => setButtonHover(false)}
                                 initial={{opacity: 0, transform: "translateY(0px)"}}
-                                animate={{opacity: 1, transform: "translateY(35px)", color: buttonHover ? filial.backgroundColor : textColor, borderColor: textColor, backgroundColor: buttonHover ? textColor : 'transparent'}}
+                                animate={{opacity: 1, transform: "translateY(45px)", color: buttonHover ? filial.backgroundColor : textColor, borderColor: textColor, backgroundColor: buttonHover ? textColor : 'transparent'}}
                                 exit={{opacity: 0, transform: "translateY(0px)"}}
                             >{`Перейти в ${filial.type === 'quarter' ? 'Здание' : 'Филиал'}`}</motion.button>
                         }

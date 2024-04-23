@@ -59,8 +59,8 @@ const EventWidget = () => {
             key={sections[sectionActive].title}
             className={styles.body}
         >
-            {   sectionActive === 0 && expositionsData.slice(-3).map((item, i) => <EventCard id={item.id}
-                                                                                   link={`/exposition/${item.link}`}
+            {   sectionActive === 0 && exhibitionsData.slice(-3).map((item, i) => <EventCard id={item.id}
+                                                                                   link={`/exhibitions/${item.link}`}
                                                                                    date={item.date}
                                                                                    title={item.title}
                                                                                    image={item.image}
@@ -89,8 +89,8 @@ const EventWidget = () => {
                                                        key={i}/>)
             }
             {
-                sectionActive === 3 && exhibitionsData.slice(-3).map((item, i) => <EventCard id={item.id}
-                                                            link={`/exhibition/${item.link}`}
+                sectionActive === 3 && expositionsData.slice(-3).map((item, i) => <EventCard id={item.id}
+                                                            link={`/expositions/${item.link}`}
                                                             date={item.date}
                                                             title={item.title}
                                                             image={item.image}
