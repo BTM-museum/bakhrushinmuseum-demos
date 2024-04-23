@@ -36,6 +36,7 @@ const Panel = ({element, setElement}: Props) => {
             <div className={styles.contentBlock}>
                 {
                     activeMenu.images[0] !== '' && <img src={activeMenu.images[0]} alt={activeMenu.title}/>
+
                 }
                 {
                     activeMenu.description
@@ -66,9 +67,12 @@ const Panel = ({element, setElement}: Props) => {
                                                                        // initial={{ opacity: 0, y: 10}} animate={{ opacity: 1, y: 0}} exit={{ opacity: 0, y: 10}}
                                                                        src={activeMenu.images[0]} alt={activeMenu.title}/>
                         }
+                    {
+                        activeMenu.images[1] !== '' && <img src={activeMenu.images[1]} alt={activeMenu.title}/>
+                    }
                     <p>
                         {
-                            activeMenu.description
+                            // activeMenu.description
                         }
                     </p>
 

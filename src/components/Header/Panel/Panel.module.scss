@@ -1,5 +1,5 @@
 .wrapper {
-  width: 95%;
+  width: 100%;
   height: fit-content;
   background: #9D2135 ;
   background: #fafafa ;
@@ -23,7 +23,7 @@
   color: white;
 
   width: fit-content;
-
+  max-width: 35%;
   a {
     color: white;
     color: #52565A;
@@ -38,12 +38,24 @@
   }
 
   img {
-    width: auto;
-    height: 400px;
+    width: 50%;
+    height: auto;
   }
   p {
     max-width: 400px;
     color: white;
     color: #52565A;
+  }
+
+  &:first-child {
+    border-right: 1.5px black solid;
+    margin-right: 60px;
+  }
+  &:last-child {
+    flex-direction: row;
+    img {
+      margin-right: 60px;
+      width: 480px;
+    }
   }
 }

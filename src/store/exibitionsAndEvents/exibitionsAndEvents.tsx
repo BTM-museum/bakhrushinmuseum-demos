@@ -7,7 +7,7 @@ export const exibitionsAndEvents = atom<IArticle>({
     default: {
         id: 1,
         title: "Выставки и события",
-        images: [image],
+        images: ['https://www.gctm.ru/wp-content/uploads/2024/04/eskiz-dekoraczii-k-spektaklyu-%C2%ABhovanshhina%C2%BB.-korovin-k.a.-streleczkoe-gnezdo.-imperatorskij-bolshoj-teatr.-1912-g.png'],
         page: <h1>{'Разводная страница с разделами.'}</h1>,
         link: 'exibitionsAndEvents',
         description: 'Разводная страница с разделами.',
@@ -15,7 +15,7 @@ export const exibitionsAndEvents = atom<IArticle>({
             {
                 id: 0,
                 title: "Выставки",
-                images: [image],
+                images: ['https://www.gctm.ru/wp-content/uploads/2024/04/eskiz-dekoraczii-k-spektaklyu-%C2%ABhovanshhina%C2%BB.-korovin-k.a.-streleczkoe-gnezdo.-imperatorskij-bolshoj-teatr.-1912-g.png'],
                 page: <h1>{'Страница со всеми Выставками, внутри разделение на: 1.текущие, 2. будущее, 3. международные 4. архив'}</h1>,
                 link: '/exhibitions/',
                 description: 'Страница со всеми Выставками, внутри разделение на: 1.текущие, 2. будущее, 3. международные 4. архив',

@@ -158,7 +158,7 @@ const Header = () => {
         {
             selectedMenu && selectedMenu.menu && <motion.div initial={{opacity: 0}} animate={{opacity: 1}} style={{
                 background: 'rgba(0,0,0,0.53)',
-                height: '100vh',
+                height: '5900px',
                 width: '100vw',
                 position: 'absolute',
                 zIndex: 1

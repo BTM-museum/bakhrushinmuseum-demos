@@ -7,7 +7,8 @@ export const children = atom<IArticle>({
     default: {
         id: 3,
         title: "Бахрушинский детям",
-        images: [''],
+         images: ['https://www.gctm.ru/wp-content/uploads/2024/04/eskiz-dekoraczii-k-spektaklyu-%C2%ABhovanshhina%C2%BB.-korovin-k.a.-streleczkoe-gnezdo.-imperatorskij-bolshoj-teatr.-1912-g.png', 'https://www.gctm.ru/wp-content/uploads/2024/04/eskiz-dekoraczii-k-opere-%C2%ABmlada%C2%BB.-fedotov-i.s.-svyashhennoe-ozero.-opera-s.i.-zimina.-1913-g.png'],
+
         page: <h1>{'Страница | Разводная страница с разделами'}</h1>,
         link: 'children',
         description: 'Разводная страница с разделами',
