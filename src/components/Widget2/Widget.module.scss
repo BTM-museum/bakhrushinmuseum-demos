@@ -13,8 +13,10 @@
     //aspect-ratio: 16/9;
     object-fit: cover;
     //align-items: center;
-    //background-repeat: no-repeat;
-    //background-position: center;
+    //object-fit: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .description {

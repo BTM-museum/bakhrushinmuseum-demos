@@ -10,11 +10,13 @@
   .image {
     width: 800px;
     height: 580px;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-position: center;
+    //aspect-ratio: 16/9;
+    //object-fit: cover;
+    //align-items: center;
+    //background-repeat: no-repeat;
+    //background-position: center;
+    background-size: cover;
+
   }
 
   .description {
