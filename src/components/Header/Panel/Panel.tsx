@@ -1,5 +1,5 @@
 import styles from './Panel.module.scss';
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, {Dispatch, SetStateAction, useEffect, useState} from 'react';
 import {IArticle} from "../../../types";
 import {Link} from "react-router-dom";
 import {AnimatePresence, motion} from 'framer-motion'
@@ -9,26 +9,20 @@ interface Props {
     setElement: Dispatch<SetStateAction<IArticle | undefined>>;
 }
 
-function hasNestedMenu(article: IArticle): boolean {
-    if (article.menu) {
-        for (const subArticle of article.menu) {
-            if (subArticle.menu) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
 
 const Panel = ({element, setElement}: Props) => {
     const [activeMenu, setActiveMenu] = useState<IArticle>(element);
+    useEffect(() => {
+        setActiveMenu(element)
+    }, [element]);
         return <motion.div
             key={element.id}
             initial={{opacity: 0, y: -10, height: '5%'}}
-            animate={{opacity: 1, y: -10, height: 'fit-content'}}
+            animate={{opacity: 1, y: -10, height: 'fit-content', justifyContent: 'center'}}
             exit={{opacity: 0, y: -10, height: '5%'}}
             className={styles.wrapper} onMouseLeave={() => {
             setElement(undefined)
+
         }}>
             <div className={styles.contentBlock} >
                 {
@@ -65,10 +59,18 @@ const Panel = ({element, setElement}: Props) => {
                     <button>Узнать подробнее</button>
 
                 </div>
-                {
-                    activeMenu.images[0] !== '' && <motion.img key={activeMenu.id}
-                                                               src={activeMenu.images[0]} alt={activeMenu.title}/>
-                }
+                    <div className={styles.images}>
+                        {activeMenu.images[0] && (
+                            <motion.img
+                                key={activeMenu.id}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.9 }}
+                                src={activeMenu.images[0]}
+                                alt={activeMenu.title}
+                            />
+                        )}
+                    </div>
 
 
             </div>

@@ -4,6 +4,7 @@ import NewsWidget from "../../components/News/NewsWidget/NewsWidget";
 import BuildingsWidget from "../../components/Buildings/BuildingsWidget/BuildingsWidget";
 import Filials from "../../components/Filials/Filials";
 import Widget from "../../components/Widget/Widget";
+import Widget1 from "../../components/Widget1/Widget";
 import News from "../../components/News/News";
 import Shop from "../../components/Shop/Shop";
 import InfiniteScrollLinks from "../../components/Line/Line";
@@ -27,7 +28,8 @@ const HomePage = () => {
         {/*<InfiniteScrollLinks items={linksData}/>*/}
 
         <Shop/>
-        <Widget/>
+        <Widget1/>
+
 
         <BuildingsWidget/>
         {/*<Filials/>*/}

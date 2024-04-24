@@ -55,7 +55,7 @@ const EventWidget = () => {
             whileInView={{ opacity: 1, y: 0,  }}
             exit={{ opacity: 0, y: 40,  }}
             transition={{ duration: 0.3, type: 'ease' }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.1 }}
             key={sections[sectionActive].title}
             className={styles.body}
         >
