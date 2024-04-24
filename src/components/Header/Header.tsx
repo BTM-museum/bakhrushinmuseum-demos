@@ -43,8 +43,10 @@ const Header = () => {
         console.log(selectedMenu);
         if (selectedMenu === undefined) {
             setShow(false)
-        }else {
-            setShow(true)
+        } else {
+           if (selectedMenu.id !== labData.id) {
+               setShow(true);
+           }
 
         }
     }, [selectedMenu]);
@@ -79,7 +81,8 @@ const Header = () => {
             <div className={styles.menu} onMouseLeave={() => {
                 setSelectedMenu(undefined)
             }}>
-                <div>
+                <div style={{display: 'flex',
+                    justifyContent: 'space-between'}}>
                     {visitorsData && <Link style={{
                         transition: 'all .3s ease',
                         borderRadius: '3px 3px 0 0',
