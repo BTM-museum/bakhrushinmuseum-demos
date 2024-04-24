@@ -114,8 +114,8 @@ const Header: React.FC = () => {
                         />
                     </Link>
                     <div className={styles.btnGroup}>
-                        <button className={styles.btn}>{"Магазин"}</button>
-                        <button className={styles.btn}>{"Купить билет"}</button>
+                        <button className={styles.btn} style={{fontSize: '17px'}}>{"Магазин"}</button>
+                        <button className={styles.btn} style={{fontSize: '17px'}}>{"Купить билет"}</button>
                         <img src={eye} alt={eye} className={styles.button}/>
                         <img src={search} alt={search} className={styles.button}/>
                         <img src={translate} alt={translate} className={styles.button}/>
