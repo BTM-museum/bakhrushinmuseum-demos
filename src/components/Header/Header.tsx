@@ -51,7 +51,7 @@ const Header = () => {
     }, [selectedMenu])
 
     return <>
-        <motion.header transition={{ type: "just", stiffness: 100 }}  animate={{ y: scrollDirection || scrollY < 400 ? '0' : '-100%' }} initial={{ y: '0' }} className={styles.wrapper}>
+        <motion.header transition={{ type: "just", stiffness: 100 }}  animate={{ y: scrollDirection || scrollY < 400 ? '0' : '-140%' }} initial={{ y: '0' }} className={styles.wrapper}>
             <div className={styles.top}>
                 <Link to={'/'} className={styles.logo}>
                     <img src={BMLogoLeft} alt="BMLogoLeft"/>
@@ -74,94 +74,96 @@ const Header = () => {
             <div className={styles.menu} onMouseLeave={() => {
                 setSelectedMenu(undefined)
             }}>
-                {visitorsData && <Link style={{
-                    transition: 'all .3s ease',
-                    borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 1 ? '#EEEEEF' : '',
-                    color: lastDown === 1 ? 'black' : 'white',
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(visitorsData);
-                    setLastDown(1);
-                }} to={visitorsData.link}>{visitorsData.title}</Link>}
-                {exibitionsAndEventsData && <Link
-                    style={{
+                <div>
+                    {visitorsData && <Link style={{
                         transition: 'all .3s ease',
                         borderRadius: '3px 3px 0 0',
-                        backgroundColor: lastDown === 2 ? '#EEEEEF' : '',
-                        color: lastDown === 2 ? 'black' : 'white',
+                        backgroundColor: lastDown === 1 ? '#EEEEEF' : '',
+                        color: lastDown === 1 ? 'black' : 'white',
+                        padding: '4px 20px'
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(visitorsData);
+                        setLastDown(1);
+                    }} to={visitorsData.link}>{visitorsData.title}</Link>}
+                    {exibitionsAndEventsData && <Link
+                        style={{
+                            transition: 'all .3s ease',
+                            borderRadius: '3px 3px 0 0',
+                            backgroundColor: lastDown === 2 ? '#EEEEEF' : '',
+                            color: lastDown === 2 ? 'black' : 'white',
+
+                            padding: '4px 20px'
+                        }}
+                        onMouseEnter={() => {
+                            setSelectedMenu(exibitionsAndEventsData);
+                            setLastDown(2);
+                        }} to={exibitionsAndEventsData.link}>{exibitionsAndEventsData.title}</Link>}
+                    {yourdelfData && <Link style={{
+                        transition: 'all .3s ease',
+                        borderRadius: '3px 3px 0 0',
+                        backgroundColor: lastDown === 3 ? '#EEEEEF' : '',
+                        color: lastDown === 3 ? 'black' : 'white',
 
                         padding: '4px 20px'
-                    }}
-                    onMouseEnter={() => {
-                    setSelectedMenu(exibitionsAndEventsData);
-                    setLastDown(2);
-                }} to={exibitionsAndEventsData.link}>{exibitionsAndEventsData.title}</Link>}
-                {yourdelfData && <Link style={{
-                    transition: 'all .3s ease',
-                    borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 3 ? '#EEEEEF' : '',
-                    color: lastDown === 3 ? 'black' : 'white',
-
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(yourdelfData);
-                    setLastDown(3);
-                }} to={yourdelfData.link}>{yourdelfData.title}</Link>}
-                {childrenData && <Link style={{
-                    transition: 'all .3s ease',
-                    borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 4 ? '#EEEEEF' : '',
-                    color: lastDown === 4 ? 'black' : 'white',
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(childrenData);
-                    setLastDown(4);
-                }} to={childrenData.link}>{childrenData.title}</Link>}
-                {labData && <Link style={{
-                    transition: 'all .3s ease',
-                    backgroundColor: lastDown === 5 ? '#EEEEEF' : '',
-                    color: lastDown === 5 ? 'black' : 'white',
-                    borderRadius: '3px',
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(labData);
-                    setLastDown(5);
-                }} to={labData.link}>{labData.title}</Link>}
-                {onlineData && <Link style={{
-                    transition: 'all .3s ease',
-                    borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 6 ? '#EEEEEF' : '',
-                    color: lastDown === 6 ? 'black' : 'white',
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(onlineData);
-                    setLastDown(6);
-                }} to={onlineData.link}>{onlineData.title}</Link>}
-                {proData && <Link style={{
-                    transition: 'all .3s ease',
-                    borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 7 ? '#EEEEEF' : '',
-                    color: lastDown === 7 ? 'black' : 'white',
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(proData);
-                    setLastDown(7);
-                }} to={proData.link}>{proData.title}</Link>}
-                {supportData && <Link style={{
-                    transition: 'all .3s ease',
-                    borderRadius: '3px 3px 0 0',
-                    backgroundColor: lastDown === 8 ? '#EEEEEF' : '',
-                    color: lastDown === 8 ? 'black' : 'white',
-                    padding: '4px 20px'
-                }} onMouseEnter={() => {
-                    setSelectedMenu(supportData);
-                    setLastDown(8);
-                }} to={supportData.link}>{supportData.title}</Link>}
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(yourdelfData);
+                        setLastDown(3);
+                    }} to={yourdelfData.link}>{yourdelfData.title}</Link>}
+                    {childrenData && <Link style={{
+                        transition: 'all .3s ease',
+                        borderRadius: '3px 3px 0 0',
+                        backgroundColor: lastDown === 4 ? '#EEEEEF' : '',
+                        color: lastDown === 4 ? 'black' : 'white',
+                        padding: '4px 20px'
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(childrenData);
+                        setLastDown(4);
+                    }} to={childrenData.link}>{childrenData.title}</Link>}
+                    {labData && <Link style={{
+                        transition: 'all .3s ease',
+                        backgroundColor: lastDown === 5 ? '#EEEEEF' : '',
+                        color: lastDown === 5 ? 'black' : 'white',
+                        borderRadius: '3px',
+                        padding: '4px 20px'
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(labData);
+                        setLastDown(5);
+                    }} to={labData.link}>{labData.title}</Link>}
+                    {onlineData && <Link style={{
+                        transition: 'all .3s ease',
+                        borderRadius: '3px 3px 0 0',
+                        backgroundColor: lastDown === 6 ? '#EEEEEF' : '',
+                        color: lastDown === 6 ? 'black' : 'white',
+                        padding: '4px 20px'
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(onlineData);
+                        setLastDown(6);
+                    }} to={onlineData.link}>{onlineData.title}</Link>}
+                    {proData && <Link style={{
+                        transition: 'all .3s ease',
+                        borderRadius: '3px 3px 0 0',
+                        backgroundColor: lastDown === 7 ? '#EEEEEF' : '',
+                        color: lastDown === 7 ? 'black' : 'white',
+                        padding: '4px 20px'
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(proData);
+                        setLastDown(7);
+                    }} to={proData.link}>{proData.title}</Link>}
+                    {supportData && <Link style={{
+                        transition: 'all .3s ease',
+                        borderRadius: '3px 3px 0 0',
+                        backgroundColor: lastDown === 8 ? '#EEEEEF' : '',
+                        color: lastDown === 8 ? 'black' : 'white',
+                        padding: '4px 20px'
+                    }} onMouseEnter={() => {
+                        setSelectedMenu(supportData);
+                        setLastDown(8);
+                    }} to={supportData.link}>{supportData.title}</Link>}
+                </div>
 
                 <AnimatePresence>
                     {
-                        selectedMenu && selectedMenu.menu && <Panel element={selectedMenu} setElement={setSelectedMenu}/>
+                        selectedMenu && selectedMenu.menu && <Panel key={selectedMenu.id} element={selectedMenu} setElement={setSelectedMenu}/>
                     }
                 </AnimatePresence>
             </div>

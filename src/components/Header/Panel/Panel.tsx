@@ -13,15 +13,16 @@ interface Props {
 const Panel = ({element, setElement}: Props) => {
     const [activeMenu, setActiveMenu] = useState<IArticle>(element);
     useEffect(() => {
-        setActiveMenu(element)
+        setActiveMenu(element);
     }, [element]);
+
         return <motion.div
             key={element.id}
-            initial={{opacity: 0, y: -10, height: '5%'}}
-            animate={{opacity: 1, y: -10, height: 'fit-content', justifyContent: 'center'}}
-            exit={{opacity: 0, y: -10, height: '5%'}}
+            initial={{opacity: 0, height: '5%'}}
+            animate={{opacity: 1,  height: 'fit-content', justifyContent: 'center'}}
+            exit={{opacity: 0,  height: '5%'}}
             className={styles.wrapper} onMouseLeave={() => {
-            setElement(undefined)
+            setElement(undefined);
 
         }}>
             <div className={styles.contentBlock} >

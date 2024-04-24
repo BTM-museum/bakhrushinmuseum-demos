@@ -47,7 +47,7 @@ const AnimatedTextWord: React.FC<AnimatedTextWordProps> = ({ text }) => {
                 // height: "100vh",
                 fontSize: "2rem",
                 color: 'white',
-                height: '40px',
+                height: '44px',
                 userSelect: "none",
             }}
             variants={container}

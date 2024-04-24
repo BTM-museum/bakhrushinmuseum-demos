@@ -1,11 +1,11 @@
 .wrapper {
-  width: 100%;
+  //width: 98%;
   height: fit-content;
   background: #9D2135 ;
   background: #EEEEEF ;
 
   position: absolute;
-  top: 110px;
+  top: calc(100% - 5.5px);
   display: flex;
 
   justify-content: center !important;
