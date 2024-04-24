@@ -139,7 +139,11 @@ const Header = () => {
                         color: lastDown === 5 ? 'black' : 'white',
                         borderRadius: '3px',
                         padding: '4px 20px'
-                    }} onMouseEnter={() => {
+                    }}
+                        onMouseLeave={() => {
+
+                        }}
+                        onMouseEnter={() => {
                         setSelectedMenu(undefined);
                         setLastDown(5);
                         setShow(false)
