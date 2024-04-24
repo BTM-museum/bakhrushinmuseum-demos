@@ -178,7 +178,7 @@ const Header = () => {
 
                 <AnimatePresence>
                     {
-                        show && selectedMenu && <Panel show={show}  element={selectedMenu} setElement={setSelectedMenu}/>
+                        show && selectedMenu && <Panel show={show}  element={selectedMenu} setShow={setShow} setElement={setSelectedMenu}/>
                     }
                 </AnimatePresence>
             </div>

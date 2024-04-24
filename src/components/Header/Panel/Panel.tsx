@@ -8,10 +8,11 @@ interface Props {
     element: IArticle;
     setElement: Dispatch<SetStateAction<IArticle | undefined>>;
     show: boolean;
+    setShow: Dispatch<SetStateAction<boolean>>;
 }
 
 
-const Panel = ({element, setElement, show}: Props) => {
+const Panel = ({element, setElement, show, setShow}: Props) => {
     const [activeMenu, setActiveMenu] = useState<IArticle>(element);
     useEffect(() => {
         setActiveMenu(element);
@@ -19,13 +20,12 @@ const Panel = ({element, setElement, show}: Props) => {
 
         if (show) {
             return  <motion.div
-                key={element.id}
                 initial={{opacity: 0, height: '5%'}}
                 animate={{opacity: 1, height: 'fit-content', justifyContent: 'center'}}
                 exit={{opacity: 0, height: '5%'}}
-                className={styles.wrapper} onMouseLeave={() => {
+                className={styles.wrapper}
+                onMouseLeave={() => {
                 setElement(undefined);
-
             }}>
                 <div className={styles.contentBlock}>
                     {
