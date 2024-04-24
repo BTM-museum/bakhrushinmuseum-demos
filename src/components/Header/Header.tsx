@@ -131,15 +131,18 @@ const Header = () => {
                         setSelectedMenu(childrenData);
                         setLastDown(4);
                     }} to={childrenData.link}>{childrenData.title}</Link>}
-                    {labData && <Link style={{
+                    {labData && <Link
+
+                        style={{
                         transition: 'all .3s ease',
                         backgroundColor: lastDown === 5 ? '#EEEEEF' : '',
                         color: lastDown === 5 ? 'black' : 'white',
                         borderRadius: '3px',
                         padding: '4px 20px'
                     }} onMouseEnter={() => {
-                        setSelectedMenu(labData);
+                        setSelectedMenu(undefined);
                         setLastDown(5);
+                        setShow(false)
                     }} to={labData.link}>{labData.title}</Link>}
                     {onlineData && <Link style={{
                         transition: 'all .3s ease',
