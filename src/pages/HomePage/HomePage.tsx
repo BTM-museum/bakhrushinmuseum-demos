@@ -28,7 +28,7 @@ const HomePage = () => {
         {/*<InfiniteScrollLinks items={linksData}/>*/}
 
         <Shop/>
-        <Widget1/>
+        <Widget/>
 
 
         <BuildingsWidget/>

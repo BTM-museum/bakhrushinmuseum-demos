@@ -13,7 +13,7 @@ const NewsWidget = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.3, type: 'ease' }}
 
             className={styles.header}>
@@ -24,7 +24,7 @@ const NewsWidget = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -30 }}
-            viewport={{ once: false, amount: 0.5 }}
+            viewport={{ once: false, amount: 0.4}}
             transition={{ duration: 0.3, type: 'ease' }}
 
             className={styles.body}>
