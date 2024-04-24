@@ -58,7 +58,10 @@ const Header = () => {
     }, [selectedMenu])
 
     return <>
-        <motion.header transition={{ type: "just", stiffness: 100 }}  animate={{ y: scrollDirection || scrollY < 400 ? '0' : '-140%' }} initial={{ y: '0' }} className={styles.wrapper}>
+        <motion.header onMouseLeave={() => {
+            setShow(false);
+            setSelectedMenu(undefined)
+        }} transition={{ type: "just", stiffness: 100 }}  animate={{ y: scrollDirection || scrollY < 400 ? '0' : '-140%' }} initial={{ y: '0' }} className={styles.wrapper}>
             <div className={styles.top}>
                 <Link to={'/'} className={styles.logo}>
                     <img src={BMLogoLeft} alt="BMLogoLeft"/>
@@ -79,7 +82,8 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.menu} onMouseLeave={() => {
-                setSelectedMenu(undefined)
+                setSelectedMenu(undefined);
+                setShow(false);
             }}>
                 <div style={{display: 'flex',
                     justifyContent: 'space-between'}}>
@@ -171,14 +175,14 @@ const Header = () => {
 
                 <AnimatePresence>
                     {
-                        show && selectedMenu && <Panel key={selectedMenu.id} element={selectedMenu} setElement={setSelectedMenu}/>
+                        show && selectedMenu && <Panel show={show}  element={selectedMenu} setElement={setSelectedMenu}/>
                     }
                 </AnimatePresence>
             </div>
         </motion.header>
         <AnimatePresence>
             {
-                show && selectedMenu && <motion.div key={selectedMenu.id} initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} style={{
+                show && selectedMenu && <motion.div initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} style={{
                     background: 'rgba(0,0,0,0.53)',
                     height: '5900px',
                     width: '100vw',
