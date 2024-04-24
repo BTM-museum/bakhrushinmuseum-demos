@@ -38,10 +38,6 @@ const Header: React.FC = () => {
         if (!panel) {setLastDown(0);}
     }, [panel])
 
-    useEffect(() => {
-        console.log(lastDown)
-        console.log(lastDown)
-    }, [lastDown])
 
 
     const controlNavbar = () => {

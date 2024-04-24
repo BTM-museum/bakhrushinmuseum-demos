@@ -21,17 +21,12 @@ const EventWidget = () => {
     const ref = useRef(null)
     const isInView = useInView(ref)
 
-    useEffect(() => {
-        console.log(ref.current)
-        console.log(isInView)
-    }, [isInView])
 
     const expositionsData = useRecoilValue(expositions);
     const excursionsData = useRecoilValue(excursions);
     const eventsData = useRecoilValue(events);
     const exhibitionsData = useRecoilValue(expositions);
 
-    console.log(exhibitionsData)
 
 
     return <div className={styles.wrapper} ref={ref}>

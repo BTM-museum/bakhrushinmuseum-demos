@@ -20,9 +20,6 @@ const FilialCard = ({ filial }: FilialCardProps) => {
 
     const textColor = getTextColorBasedOnBgColor(filial.backgroundColor);
 
-    useEffect(() => {
-        console.log("Element is in view: ", isInView)
-    }, [isInView])
 
     return  <motion.div
             ref={ref}

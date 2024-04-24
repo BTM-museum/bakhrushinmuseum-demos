@@ -13,7 +13,6 @@ dayjs.locale('ru'); // установка локали
 
 const EventCard = (event: IEvent) => {
     const [ selectedEvent, setSelectedEvent ] = useState<boolean>(false);
-    console.log(event.type)
     // Формируем даты с использованием dayjs
     const fromDate = dayjs(event.date.from);
     const toDate = dayjs(event.date.to);

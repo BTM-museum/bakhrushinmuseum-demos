@@ -36,13 +36,18 @@ const Header = () => {
     const supportData = useRecoilValue(support);
     const visitorsData = useRecoilValue(visitors);
     const [selectedMenu, setSelectedMenu] = useState<IArticle | undefined>(undefined)
-    const [lastDown, setLastDown] = useState<number>(0)
-
+    const [lastDown, setLastDown] = useState<number>(0);
+    const [ show, setShow ] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log(scrollDirection);
-        console.log(scrollY);
-    }, [scrollY, scrollDirection]);
+        console.log(selectedMenu);
+        if (selectedMenu === undefined) {
+            setShow(false)
+        }else {
+            setShow(true)
+
+        }
+    }, [selectedMenu]);
 
     useEffect(() => {
         if (selectedMenu === undefined) {
@@ -163,14 +168,14 @@ const Header = () => {
 
                 <AnimatePresence>
                     {
-                        selectedMenu && selectedMenu.menu && <Panel key={selectedMenu.id} element={selectedMenu} setElement={setSelectedMenu}/>
+                        show && selectedMenu && <Panel key={selectedMenu.id} element={selectedMenu} setElement={setSelectedMenu}/>
                     }
                 </AnimatePresence>
             </div>
         </motion.header>
         <AnimatePresence>
             {
-                selectedMenu && selectedMenu.menu && <motion.div key={selectedMenu.id} initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} style={{
+                show && selectedMenu && <motion.div key={selectedMenu.id} initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} style={{
                     background: 'rgba(0,0,0,0.53)',
                     height: '5900px',
                     width: '100vw',

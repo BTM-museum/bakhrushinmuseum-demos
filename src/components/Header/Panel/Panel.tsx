@@ -40,8 +40,6 @@ const Panel = ({element, setElement}: Props) => {
                     element && element.menu && element.menu.slice(Math.ceil(element.menu.length / 2)).map((item, i) =>
                         <Link onMouseEnter={() => {
                             setActiveMenu(item);
-                            console.log(activeMenu.title)
-                            console.log(item.title)
                         }} style={activeMenu.title === item.title ? {background: '#9D2135', color: 'white'} : {background: '', color: '#52565A'}} to={item.link}>{item.title}</Link>)
                 }
             </div>
