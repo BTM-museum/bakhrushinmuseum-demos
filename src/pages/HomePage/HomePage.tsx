@@ -24,11 +24,11 @@ const HomePage = () => {
         <Widget/>
         {/*<News/>*/}
 
-        <NewsWidget/>
+        {/* <NewsWidget/> */}
 
         {/*<InfiniteScrollLinks items={linksData}/>*/}
 
-        <Shop/>
+        {/* <Shop/> */}
         <Widget2/>
 
 
