@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import './styles/App.css';
+// import './styles/App.css';
 import {AnimatePresence} from "framer-motion";
 import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
 import Layout from "./Layout";
@@ -9,7 +9,7 @@ import ExcursionPage from "./pages/ExcursionPage/ExcursionPage";
 import ExhibitionPage from "./pages/ExhibitionPage/ExhibitionPage";
 import ExpositionPage from "./pages/ExpositionPage/ExpositionPage";
 import NewPage from "./pages/NewPage/NewPage";
-import StorePage from "./pages/StorePage/StorePage";
+// import StorePage from "./pages/StorePage/StorePage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import BuildingPage from "./pages/BuildingPage/BuildingPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
@@ -37,7 +37,7 @@ function AnimationRouter() {
                 <Route path={'/expositions'} element={<ExpositionPage/>}/>
                 <Route path={'/news/:id'} element={<NewPage/>}/>
                 <Route path={'/news'} element={<NewPage/>}/>
-                <Route path={'/store/:id'} element={<StorePage/>}/>
+                {/* <Route path={'/store/:id'} element={<StorePage/>}/> */}
                 <Route path={'/building/:id'} element={<BuildingPage/>}/>
                 <Route path={'/about/:id'} element={<AboutPage/>}/>
                 <Route path={'/about'} element={<AboutPage/>}/>
