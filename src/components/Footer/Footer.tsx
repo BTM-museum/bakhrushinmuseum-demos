@@ -83,7 +83,7 @@ const Footer = () => {
                                                                                                       to={`visitors/${item.link}`}>{item.title}</Link>)
                     }
                 </div>
-                <img src={ministerstvo} alt="ministerstvo"/>
+                {/* <img src={ministerstvo} alt="ministerstvo"/> */}
             </div>
 
             <div className={styles.block}>
@@ -95,7 +95,7 @@ const Footer = () => {
                                                                                              to={`/about${item.link}`}>{item.title}</Link>)
                     }
                 </div>
-                <img src={gosuslugi} alt="gosuslugi"/>
+                {/* <img src={gosuslugi} alt="gosuslugi"/> */}
             </div>
 
             <div className={styles.block}>
@@ -108,7 +108,7 @@ const Footer = () => {
                                   to={item.link}>{item.title}</Link>)
                     }
                 </div>
-                <img src={cultura} alt="cultura"/>
+                {/* <img src={cultura} alt="cultura"/> */}
             </div>
 
             <div className={styles.block}>
@@ -121,7 +121,7 @@ const Footer = () => {
                     }
                 </div>
                 <div className={styles.imgGroup}>
-                    <a href={'https://rutube.ru/channel/23745556/'}>
+                    {/* <a href={'https://rutube.ru/channel/23745556/'}>
                         <img src={rt} alt="rt"/>
                     </a>
                     <a href={'https://t.me/bakhrushinmuseum'}>
@@ -134,7 +134,7 @@ const Footer = () => {
                     </a>
                     <a href={'https://www.youtube.com/@bakhrushinmuseum'}>
                         <img src={yt} alt="yt"/>
-                    </a>
+                    </a> */}
 
                 </div>
             </div>
