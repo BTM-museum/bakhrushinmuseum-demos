@@ -13,9 +13,9 @@ const EventWidget = () => {
     const [sectionActive, setSectionActive] = React.useState<number>(0);
     const sections: { link: string; title: string; }[] = [
         {link: '/expositions', title: 'Выставки'},
-        {link: '/excursions', title: 'Экскурсии'},
-        {link: '/exhibitions', title: 'Экспозиции'},
-        {link: '/events', title: 'События'},
+        // {link: '/excursions', title: 'Экскурсии'},
+        // {link: '/exhibitions', title: 'Экспозиции'},
+        // {link: '/events', title: 'События'},
     ];
 
     const ref = useRef(null)
@@ -63,7 +63,7 @@ const EventWidget = () => {
                                                                                    position={item.position}
                                                                                    type={item.type}
                                                                                    key={i}/>)}
-            {   sectionActive === 1 && excursionsData.slice(-3).map((item, i) => <EventCard id={item.id}
+            {/* {   sectionActive === 1 && excursionsData.slice(-3).map((item, i) => <EventCard id={item.id}
                                                                                    link={`/excursion/${item.link}`}
                                                                                    date={item.date}
                                                                                    title={item.title}
@@ -93,7 +93,7 @@ const EventWidget = () => {
                                                             position={item.position}
                                                             type={item.type}
                                                             key={i}/>)
-            }
+            } */}
         </motion.div>
     </div>
 };
