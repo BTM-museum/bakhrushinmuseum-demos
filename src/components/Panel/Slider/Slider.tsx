@@ -180,7 +180,7 @@ const Slider = () => {
             <img onClick={usePrevSlide} src={arrow} alt="arrow" className={styles.petal}
                  style={{left: '1vw', transform: 'rotate(-180deg)'}}/>
             <img onClick={useNextSlide} src={arrow} alt="arrow" className={styles.petal}/>
-            <img src={filials} alt={''} className={styles.filials}/>
+              {/* <img src={filials} alt={''} className={styles.filials}/> */}
         </motion.div>
     </div>
 }
