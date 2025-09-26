@@ -1,8 +1,8 @@
 import {atom} from 'recoil';
 import {IEvent} from "../../types";
 import image133 from './static/133.png';
-import image134 from './static/134.png';
-import image145 from './static/145.jpg';
+import image134 from './static/133.png';
+import image145 from './static/133.png';
 import image663 from './static/663.jpg';
 import dayjs from "dayjs";
 
