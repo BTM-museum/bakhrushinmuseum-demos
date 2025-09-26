@@ -21,13 +21,13 @@ const BuildingsWidget = () => {
         { id: 1, title: "Филиалы", link: "" },
     ];
 
-    const data: IFilials[] = [
+   const data: IFilials[] = [
         { id: 0, title: "Квартал 1", imageUrl: "https://placehold.jp/600x600.png", imageAddUrl: dop1, position: "Адрес квартала 1", link: "/", type: "quarter", backgroundColor: 'rgb(255,255,255)'},
         { id: 1, title: "Квартал 2", imageUrl: "https://placehold.jp/600x600.png", imageAddUrl: dop1, position: "Адрес квартала 2", link: "/", type: "quarter", backgroundColor: 'rgb(255,255,255)'},
         { id: 2, title: "Квартал 3", imageUrl: "https://placehold.jp/600x600.png", imageAddUrl: dop1, position: "Адрес квартала 3", link: "/", type: "quarter", backgroundColor: 'rgb(255,255,255)'},
-        { id: 5, title: "Дом-музей Ермоловой", imageUrl: "https://gctm.ru/img/ermolova.jpg", imageAddUrl: dop1, position: "Адрес Филиала 6", link: "/", type: "filial", backgroundColor: 'rgb(187, 133, 171)'},
-        { id: 6, title: "Музей-квартира мейерхольда", imageUrl: "https://gctm.ru/img/meirhold.jpg", imageAddUrl: dop2, position: "Адрес Филиала 7", link: "/", type: "filial", backgroundColor: 'rgb(225, 8, 0)'},
-        { id: 7, title: "Музей-квартира мироновы-менкареа", imageUrl: "https://gctm.ru/img/mironova.jpg", imageAddUrl: dop3, position: "Адрес Филиала 8", link: "/", type: "filial", backgroundColor: 'rgb(224, 192, 159)'},
+        { id: 5, title: "Дом-музей Ермоловой", imageUrl: "https://gctm.ru/img/ermolova.jpg", imageAddUrl: dop1, position: "Адрес Филиала 6", link: "/", type: "filial", backgroundColor: 'rgb(255,255,255)'},
+        { id: 6, title: "Музей-квартира мейерхольда", imageUrl: "https://gctm.ru/img/meirhold.jpg", imageAddUrl: dop1, position: "Адрес Филиала 7", link: "/", type: "filial", backgroundColor: 'rgb(255,255,255)'},
+        { id: 7, title: "Музей-квартира мироновы-менкареа", imageUrl: "https://gctm.ru/img/mironova.jpg", imageAddUrl: dop1, position: "Адрес Филиала 8", link: "/", type: "filial", backgroundColor: 'rgb(255,255,255)'},
     ];
 
     const newsData = useRecoilValue(buildings);
