@@ -18,7 +18,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+            
             type: "filial",
             link: 'Dom-museum-Ermolovoj'
         },
@@ -29,7 +29,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#E10800',
             page: <h1>Музей-квартира Мейерхольда | СТРАНИЦА</h1>,
             image: meirhold,
-            addImage: meirhold_dop,
+            
             type: "filial",
             link: 'Muzej-kvartira-Mejerholda'
         },
@@ -40,7 +40,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#E0C09F',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: mironova,
-            addImage: mironova_dop,
+            
             type: "filial",
             link: 'Muzej-kvartira-Mironovyh—Menakera'
         },
@@ -51,7 +51,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+            
             type: "filial",
             link: 'Filial-1'
         },
@@ -62,7 +62,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+            
             type: "filial",
             link: 'Filial-2'
         },
@@ -73,7 +73,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+            
             type: "filial",
             link: 'Filial-3'
         },
@@ -84,7 +84,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+           
             type: 'quarter',
             link: 'Filial-4'
         },
@@ -95,7 +95,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+           
             type: 'quarter',
             link: 'Filial-5'
         },
@@ -106,7 +106,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+           
             type: 'quarter',
             link: 'Filial-6'
         },
@@ -117,7 +117,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+           
             type: 'quarter',
             link: 'Filial-7'
         },
@@ -128,7 +128,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+            
             type: 'quarter',
             link: 'Filial-8'
         },
@@ -139,7 +139,7 @@ export const buildings = atom<IBuilding[]>({
             backgroundColor: '#BB85AB',
             page: <h1>Дом-музей Ермоловой | СТРАНИЦА</h1>,
             image: ermolova,
-            addImage: ermolova_dop,
+            
             type: 'quarter',
             link: 'Filial-9'
         },
