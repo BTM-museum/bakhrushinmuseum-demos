@@ -26,7 +26,7 @@ interface IBuilding {
     title: string;
     page: React.ReactElement;
     image: string;
-    addImage: string;
+    addImage?: string;
     color: string;
     backgroundColor: string;
     type: 'quarter' | 'filial',
