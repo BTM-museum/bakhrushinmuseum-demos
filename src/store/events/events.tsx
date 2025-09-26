@@ -26,7 +26,7 @@ export const events = atom<IEvent[]>({
             title: 'Бахрушинский поддержит создание Театрального музея в Саратове',
             type: 'pro',
             page: <h1>Бахрушинский поддержит создание Театрального музея в Саратове</h1>,
-            image: image134,
+            image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
             link: 'Bahrushinskij-podderzhit-sozdanie-Teatralnogo-muzeya-v-Saratove'
@@ -37,7 +37,7 @@ export const events = atom<IEvent[]>({
             title: 'Музыкально-поэтический перфоман «В ожидании тепла». 12+',
             type: 'pro',
             page: <h1>Музыкально-поэтический перфоман «В ожидании тепла». 12+</h1>,
-            image: image145,
+            image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
             link: 'Muzykalno-poeticheskij-perfoman'
@@ -47,7 +47,7 @@ export const events = atom<IEvent[]>({
             id: 3,
             title: 'Музыкально-поэтический перфоман «В ожидании тепла». 12+',
             page: <h1>Музыкально-поэтический перфоман «В ожидании тепла». 12+</h1>,
-            image: image663,
+            image: image133,
             date: {from: dayjs(), to: dayjs()},
             position: 'Москва, улица Бахрушина, 31/12с1',
             link: 'Muzykalno-poeticheskij-perfoman1'
